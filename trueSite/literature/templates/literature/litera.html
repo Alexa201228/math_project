@@ -1,5 +1,5 @@
-<html lang="en"><head>
-
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -38,20 +38,28 @@
 
   
     <!-- Portfolio Section -->
-    <section class="page-section bg-dark text-white" id="portfolio">
-      <div class="row">
+    <section class="page-section bg-dark" id="portfolio">
+      <div class="container">
+        <div class="row equal h-100" >
         {% for book in lit.all %}
         <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
-         <div class="card-body">
-           <h3>{{ book.title }}</h3>          
-            <img class='card-img-top' src="{{ book.image.url }}">
+          <div class="card mb-4 shadow-sm" style="height: 450px;">
+           <div class="card-body ">
+              <a href="https://google.com/?q={{book.title}}">
+                <h3>{{ book.little_title }}</h3> 
+              </a>      
+            <img class='card-img-tsop' height="150" width="150" src="{{ book.image.url }}">
           
-          <p>{{ book.description }}</p>
-          <a href="{{book.books}}"></a>
-         </div>
+          <p>{{ book.summary }}</p>
+          
+         </div> 
+          </div>
+         
         </div>
         {% endfor %}
       </div>
+      </div>
+      
         
      </section>     
 
