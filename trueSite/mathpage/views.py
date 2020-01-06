@@ -1,4 +1,8 @@
 from django.shortcuts import render
 
+from .models import MathPage
+
 def math(request):
-    return render(request,'math/mathematics.html')
+    mathtasks = MathPage.objects
+    return render(request,'math/mathematics.html', {'math_tasks': mathtasks})
+
