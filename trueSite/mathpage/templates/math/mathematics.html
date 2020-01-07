@@ -30,15 +30,43 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        
-      </div>
+        </div>
     </nav>
-
-  
+    <div id="secondary" class="widget-area" role="complementary"> <aside id="phpeverywherewidget-3" class="widget phpeverywherewidget"><h3 class="widget-title"><span class="prefix-widget-title"><i class="fa fa-th-large"></i></span> Найдется ВсЁ</h3><center> <!-- e2fb1d88 --> <!-- 4db09b69 --> <script>var mt_cid = 51434548</script> <script>var mt_gcid = 'UA-125901881-47'</script> <script async="async" src="http://adcounter19.uptolike.ru/counter.js?sid=st94cc88afb38a52b1e8beceabf8b62b4a4a8baa2a" type="text/javascript"></script> <!-- e2fb1d88 --> </center></aside><aside id="search-5" class="widget widget_search"> <div class="wrapper-search-form"> <form method="get" id="searchform" action="http://csaa.ru/"> <label for="s" class="assistive-text">Search</label> <input type="search" class="txt-search-n" name="s" id="s"> <input type="submit" name="submit" id="btn-search-n" value="Search"> </form> </div></aside> <aside id="recent-posts-11" class="widget widget_recent_entries"> <h3 class="widget-title"><span class="prefix-widget-title"><i class="fa fa-th-large"></i></span> Последняя инфа:</h3> <ul> <li> <a href="http://csaa.ru/operacionnaja-sistema-windows/">Операционная система windows</a> </li> <li> <a href="http://csaa.ru/notnye-izdanija-i-zvukozapisi/">Нотные издания и звукозаписи</a> </li> <li> <a href="http://csaa.ru/obobshhennyj-algoritm-funkcionirovanija-mks/">Обобщенный алгоритм функционирования мкс</a> </li> <li> <a href="http://csaa.ru/asinhronnyj-rezhim-v-windows/">Асинхронный режим в windows.</a> </li> <li> <a href="http://csaa.ru/nastrojka-servernoj-infrastruktury/">Настройка серверной инфраструктуры</a> </li> <li> <a href="http://csaa.ru/klassifikacija-programmnogo-obespechenija-op-jevm/">Классификация программного обеспечения (оп) эвм.</a> </li> <li> <a href="http://csaa.ru/lokalnye-seti-po-tehnologii-ethernet/">Локальные сети по технологии ethernet</a> </li> <li> <a href="http://csaa.ru/algoritm-cifrovoj-podpisi-rsa/">Алгоритм цифровой подписи rsа</a> </li> <li> <a href="http://csaa.ru/nemnogo-istorii-kompjuternoj-svjazi/">Немного истории компьютерной связи</a> </li> <li> <a href="http://csaa.ru/anketirovanie-vospitatelej/">Анкетирование воспитателей</a> </li> <li> <a href="http://csaa.ru/esli-log-vyrazhenie-znachenie-esli-istina/">Если(лог_выражение;значение_если_истина; значение_если_ложь)</a> </li> </ul> </aside> <aside id="phpeverywherewidget-2" class="widget phpeverywherewidget"><h3 class="widget-title"><span class="prefix-widget-title"><i class="fa fa-th-large"></i></span> Информация:</h3><center> <!-- e2fb1d88 --> <!-- b921a13d --> <script>var mt_cid = 51434548</script> <script>var mt_gcid = 'UA-125901881-47'</script> <script async="async" src="http://adcounter19.uptolike.ru/counter.js?sid=st94cc88afb38a52b1e8beceabf8b62b4a4a8baa2a" type="text/javascript"></script> <!-- e2fb1d88 --> </center></aside><aside id="categories-10" class="widget widget_categories"><h3 class="widget-title"><span class="prefix-widget-title"><i class="fa fa-th-large"></i></span> Основная рубрика:</h3> <ul> <li class="cat-item cat-item-186558"><a href="http://csaa.ru/category/informatika/">Информатика</a> </li> </ul> </aside> </div>
+<div class="content">
+  <div class="widget" role="complementary">
+    <aside id="recent-posts-11" class="widget widget_recent_entries">
+ <ul> 
+   <li>
+    <a href="http://csaa.ru/operacionnaja-sistema-windows/">Операционная система windows</a> </li>
+     <li> <a href="http://csaa.ru/notnye-izdanija-i-zvukozapisi/">Нотные издания и звукозаписи</a> </li>
+      <li> <a href="http://csaa.ru/obobshhennyj-algoritm-funkcionirovanija-mks/">Обобщенный алгоритм функционирования мкс</a>
+      </li> 
+      <li> <a href="http://csaa.ru/asinhronnyj-rezhim-v-windows/">Асинхронный режим в windows.</a> </li> <li> <a href="http://csaa.ru/nastrojka-servernoj-infrastruktury/">Настройка серверной инфраструктуры</a>
+       </li>
+  </ul>
+  </aside>
+  </div>
     <!-- Portfolio Section -->
-    <section class="page-section bg-dark text-white" id="portfolio">
+    
+      <div class="container">
+          {% for task in math_tasks.all %}
+          <br/>
+                  <h3>{{ task.description }}</h3> 
+                </a> 
+                <a href="{{ task.image.url }}">
+                   <img class='card-img-tsop' src="{{ task.image.url }}">
+                </a>     
+             
+            
+            <p>{{ task.solution }}</p>
+            <hr/>
+          {% endfor %}
+       
+      </div>
       
-     </section>     
+</div>
+  
 
   
     <!-- Footer -->

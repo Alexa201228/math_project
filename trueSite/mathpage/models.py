@@ -5,3 +5,6 @@ class MathPage(models.Model):
     image = models.ImageField(upload_to='math_images/', null=True)
     description = models.TextField(null=True)
     solution = models.TextField(null=True)
+
+    def __str__(self):
+        return self.title

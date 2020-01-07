@@ -22,12 +22,14 @@
   {% load static %}
   <body id="page-top">
   <style>
-    #portfolio-image {width: 650px; height: 350px;}
-    #mainimg{object-fit: cover; opacity: 0.4; position: relative;}
+    #mainimg{object-fit: cover; opacity: 1; position: relative;}
     #header{
-      height: 800px;
+      height: 100px;
     width: 100vw;
     overflow: hidden;
+    }
+    #homework{
+      background-color:#1C69AA;
     }
   </style>
 
@@ -55,7 +57,7 @@
     </nav>
     <!-- Masthead -->
     <header class="masthead" id="header">
-      <img src="{% static 'bg-masthead.jpg' %}" id="mainimg">
+      <img src="http://csaa.ru/wp-content/uploads/2018/01/121343241.jpg" id="mainimg">
         <section>
   
             <h1 class="text-uppercase text-white font-weight-bold">Your Favorite Source of Free Bootstrap Themes</h1>
@@ -68,7 +70,7 @@
     </header>
   
     <!-- About Section -->
-    <section class="page-section bg-primary" id="homework">
+    <section class="page-section" id="homework">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
