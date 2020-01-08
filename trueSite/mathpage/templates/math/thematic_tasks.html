@@ -44,25 +44,23 @@
           <h1 class="my-4">Темы</h1>
           <div class="list-group">
             {% for task in math_tasks.all %}
-           
-              <a href="" class="list-group-item">{{task.theme}}</a>
-              
+            <a href="{% url 'tasks' task.theme %}" class="list-group-item">{{task.theme}}</a>
             {% endfor %}
           </div>
   
         </div>
         <div class="col-lg-8">
           <div class="container">
-            {% for task in math_tasks.all %}
+            {% for t in tasks.all %}
           <br/>
-                  <h3>{{ task.title }}</h3> 
+                  <h3>{{ t.title }}</h3> 
                 </a> 
-                <a href="{{ task.image.url }}">
-                   <img class='card-img-tsop' src="{{ task.image.url }}" style="max-width: 700px;">
+                <a href="{{ t.image.url }}">
+                   <img class='card-img-tsop' src="{{ t.image.url }}" style="max-width: 700px;">
                 </a>     
              
             
-            <p>{{ task.solution }}</p>
+            <p>{{ t.solution }}</p>
             <hr/>
           {% endfor %}
           </div>
