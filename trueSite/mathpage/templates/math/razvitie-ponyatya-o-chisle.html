@@ -41,15 +41,29 @@
       <div class="row">
         <div class="col-lg-3" style="padding-left: 200px;">
 
-          <h1 class="my-4">Темы</h1>
+          <i><h1 class="my-4">Темы</h1></i>
           <div class="list-group">
-            {% for task in math_tasks.all %}
-            <a href="{% url 'tasks' task.theme %}" class="list-group-item">{{task.theme}}</a>
-            {% endfor %}
+            
+               <a class="list-group-item" style="color: black;"  href="{% url 'math' %}">Все темы</a> </li>  
+               <a class="list-group-item" style="color: black;"  href="">Развитие понятия о числе</a> </li> 
+               <a class="list-group-item" style="color: black;"  href="http://csaa.ru/diskretnoe-cifrovoe-predstavlenie-tekstovoj/">Корни, степени и логарифмы</a> </li> 
+               <a class="list-group-item" style="color: black;"  href="http://csaa.ru/operacionnaja-sistema-windows/">Прямые и плоскости в пространстве</a> </li> 
+               <a class="list-group-item" style="color: black;"  href="http://csaa.ru/notnye-izdanija-i-zvukozapisi/">Элементы комбинаторики</a> </li> 
+               <a class="list-group-item" style="color: black;"  href="http://csaa.ru/obobshhennyj-algoritm-funkcionirovanija-mks/">Координаты и векторы</a> </li> 
+               <a class="list-group-item" style="color: black;"  href="http://csaa.ru/asinhronnyj-rezhim-v-windows/">Основы тригонометрии</a> </li>
+               <a class="list-group-item" style="color: black;"  href="http://csaa.ru/nastrojka-servernoj-infrastruktury/">Функции, их свойства и графики</aclass="list-group-item" style="color: black;"> </li> 
+               <a class="list-group-item" style="color: black;"  href="http://csaa.ru/klassifikacija-programmnogo-obespechenija-op-jevm/">Многранники и круглые тела</a> </li> 
+               <a class="list-group-item" style="color: black;"  href="http://csaa.ru/lokalnye-seti-po-tehnologii-ethernet/">Начала математического анализа</a> </li> 
+               <a class="list-group-item" style="color: black;"  href="http://csaa.ru/algoritm-cifrovoj-podpisi-rsa/">Интеграл и его применение</a> </li> 
+               <a class="list-group-item" style="color: black;"  href="http://csaa.ru/nemnogo-istorii-kompjuternoj-svjazi/">Элементы теории вероятностей и математической статистики</a> </li> 
+               <a class="list-group-item" style="color: black;"  href="http://csaa.ru/klassifikacija-programmnogo-obespechenija-op-jevm/">Уравнения и неравенства</a> </li> 
+            
           </div>
   
         </div>
+        
         <div class="col-lg-8">
+          <br/>
           <div class="container">
             {% for t in tasks.all %}
           <br/>

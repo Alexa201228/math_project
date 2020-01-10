@@ -22,7 +22,7 @@ import homepage.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage.views.Home, name='Home'),
-    path('math/', include('mathpage.urls')),
+    path('math/', include('mathpage.urls'), name='math'),
     path('homework/', include('homework.urls')),
     path('literature/', include('literature.urls')),
     path('metodics/', include('metodics.urls')),
