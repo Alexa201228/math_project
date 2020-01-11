@@ -19,9 +19,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-creative/5.1.8/css/creative.min.css" rel="stylesheet">
   
   </head>
-  <style>
-    #links{color: black;}
-  </style>
+  
   <body id="page-top">
 
 
@@ -44,24 +42,21 @@
         <div class="col-lg-3" style="padding-left: 200px;">
 
           <i><h1 class="my-4">Темы</h1></i>
-          <div class="list-group" >
-           
-              
-               <a class="list-group-item" style="color: black;" href="">Все темы</a> 
-               <a class="list-group-item" style="color: black;"  href="razvitie-ponyatya-o-chisle.html">Развитие понятия о числе</a>
-              <a class="list-group-item" style="color: black;"  href="korni-stepeni-logarifmi.html">Корни, степени и логарифмы</a> 
-              <a class="list-group-item" style="color: black;"  href="priamie-i-ploskosti-v-prostranstve.html">Прямые и плоскости в пространстве</a> 
-              <a class="list-group-item" style="color: black;"  href="elementi-kombinatoriki.html">Элементы комбинаторики</a>
-              <a class="list-group-item" style="color: black;"  href="coordinati-i-vectori.html">Координаты и векторы</a>
-              <a class="list-group-item" style="color: black;"  href="osnovi-trigonometrii.html">Основы тригонометрии</a>
-              <a class="list-group-item" style="color: black;"  href="functions-ich-grafiki-i-svoistva.html">Функции, их свойства и графики</a> 
-              <a class="list-group-item" style="color: black;"  href="mnogogranniki-i-kruglie-tela.html">Многранники и круглые тела</a>
-              <a class="list-group-item" style="color: black;"  href="nachala-matanaliza.html">Начала математического анализа</a>
-              <a class="list-group-item" style="color: black;"  href="integral-i-ego-primenenie.html">Интеграл и его применение</a>
-              <a class="list-group-item" style="color: black;"  href="elementi-teorii-veroyatnostey-i-matstat.html">Элементы теории вероятностей и математической статистики</a> 
-              <a class="list-group-item" style="color: black;"  href="uravnenia-i-neravenstva.html">Уравнения и неравенства</a> 
+          <div class="list-group">
             
-            
+               <a class="list-group-item" style="color: black;"  href="{% url 'math' %}">Все темы</a> </li>  
+               <a class="list-group-item" style="color: black;"  href="{% url 'ponyatia_o_chisle' %}">Развитие понятия о числе</a> </li> 
+               <a class="list-group-item" style="color: black;"  href="{% url 'korni' %}">Корни, степени и логарифмы</a> 
+              <a class="list-group-item" style="color: black;"  href="{% url 'priamie' %}">Прямые и плоскости в пространстве</a> 
+              <a class="list-group-item" style="color: black;"  href="{% url 'kombinatorica' %}">Элементы комбинаторики</a>
+              <a class="list-group-item" style="color: black;"  href="{% url 'coordinati' %}">Координаты и векторы</a>
+              <a class="list-group-item" style="color: black;"  href="{% url 'trigonometria' %}">Основы тригонометрии</a>
+              <a class="list-group-item" style="color: black;"  href="{% url 'functions' %}">Функции, их свойства и графики</a> 
+              <a class="list-group-item" style="color: black;"  href="{% url 'mnogogranniki' %}">Многранники и круглые тела</a>
+              <a class="list-group-item" style="color: black;"  href="{% url 'matan' %}">Начала математического анализа</a>
+              <a class="list-group-item" style="color: black;"  href="{% url 'integral' %}">Интеграл и его применение</a>
+              <a class="list-group-item" style="color: black;"  href="{% url 'teorver' %}">Элементы теории вероятностей и математической статистики</a> 
+              <a class="list-group-item" style="color: black;"  href="{% url 'neravenstva' %}">Уравнения и неравенства</a> 
             
           </div>
   
@@ -70,16 +65,16 @@
         <div class="col-lg-8">
           <br/>
           <div class="container">
-            {% for task in math_tasks.all %}
+            {% for t in tasks.all %}
           <br/>
-                  <h3>{{ task.title }}</h3> 
+                  <h3>{{ t.title }}</h3> 
                 </a> 
-                <a href="{{ task.image.url }}">
-                   <img class='card-img-tsop' src="{{ task.image.url }}" style="max-width: 700px;">
+                <a href="{{ t.image.url }}">
+                   <img class='card-img-tsop' src="{{ t.image.url }}" style="max-width: 700px;">
                 </a>     
              
             
-            <p>{{ task.solution }}</p>
+            <p>{{ t.solution }}</p>
             <hr/>
           {% endfor %}
           </div>
