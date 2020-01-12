@@ -26,9 +26,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark py-3 text-white" id="mainNav">
       <div class="container text-white">
         <a class="navbar-brand js-scroll-trigger text-white" href="{% url 'Home' %}">Главная</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        
        
       </div>
     </nav>
@@ -37,7 +35,7 @@
     <!-- Portfolio Section -->
     <section class="page-section bg-dark" id="portfolio">
       <div class="container">
-        <div class="row equal h-100" >
+        <div class="row" >
         {% for book in lit.all %}
         <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
           <div class="card mb-4 shadow-sm" style="height: 450px;">
@@ -49,9 +47,9 @@
                  <img class='card-img-tsop' height="150" width="150" src="{{ book.image.url }}">
               </a>     
            
-          
+          {% if book.summay != ""%}
           <p>{{ book.summary }}</p>
-          
+          {% endif %}
          </div> 
           </div>
          
@@ -70,7 +68,7 @@
         <p class="float-right">
           <a href="#">Top</a>
         </p>
-        <div class="small text-center text-muted">Copyright © A. G.{% now "Y" %}</div>
+        <div class="small text-center text-muted">Copyright © Alexandra Gridneva {% now "Y" %}</div>
       </div>
     </footer>
   

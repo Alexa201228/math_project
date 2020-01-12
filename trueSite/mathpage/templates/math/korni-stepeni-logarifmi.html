@@ -27,9 +27,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-dark py-3 text-white" id="mainNav">
       <div class="container text-white">
         <a class="navbar-brand js-scroll-trigger text-white" href="{% url 'Home' %}">Главная</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        
         </div>
         
     </nav>
@@ -72,12 +70,23 @@
                 <a href="{{ t.image.url }}">
                    <img class='card-img-tsop' src="{{ t.image.url }}" style="max-width: 700px;">
                 </a>     
+             {% if t.description != null %}
+             <p>{{ t.description }}</p>
              
-            
-            <p>{{ t.solution }}</p>
+             {% endif %}
+            {% if t.solution != null %}
             <hr/>
+            <p>{{ t.solution }}</p>
+            {% endif %}
+            {% if t.image_solution != null%}
+            <a href="{{ t.image_solution.url }}">
+              <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 500px; max-height: 500px;">
+           </a>
+           {% endif %}
+           <hr class="divider"/>
           {% endfor %}
           </div>
+          
           
        
       </div>
@@ -95,7 +104,7 @@
         <p class="float-right">
           <a href="#">Top</a>
         </p>
-        <div class="small text-center text-muted">Copyright © A. G.{% now "Y" %}</div>
+        <div class="small text-center text-muted">Copyright ©Alexandra Gridneva {% now "Y" %}</div>
       </div>
     </footer>
   
