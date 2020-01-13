@@ -36,10 +36,14 @@
     <section class="page-section">
       <div class="container">
            <h3>{{ task.title }}</h3>
+           {% if task.image != null%}
            <img src="{{ task.image.url }}"/>
+           {% endif %}
            <br/>
            <hr/>
+           {% if task.description != null%}
            <p class="card-text">{{ task.description }}</p>
+           {% endif %}
       </div>
 
      </section>     
