@@ -85,7 +85,7 @@
           {% for h in home.all %}
           <div class="col-lg-4 col-sm-6">
             <a class="portfolio-box" href="{{ h.url }}">
-              <img class="img-fluid" src="{{ h.image.url }}">
+              <img class="img-fluid" src="{{ h.image.url }}" style="height: 350px; width: 650px;">
               <div class="portfolio-box-caption">
                 <div class="project-category text-white-50">
                   {{h.category}}
