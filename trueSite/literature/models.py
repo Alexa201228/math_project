@@ -9,8 +9,3 @@ class Literature(models.Model):
     def __str__(self):
         return self.title
     
-    def summary(self):
-        return self.description[:100] +" ..."
-    
-    def little_title(self):
-        return self.title[:50] + "..."
