@@ -36,16 +36,16 @@
         <div class="row" >
         {% for book in lit.all %}
         <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
-          <div class="card mb-4 shadow-sm" style="height: 450px;">
+          <div class="card mb-4 shadow-sm">
            <div class="card-body ">
               <a href="https://google.com/?q={{book.title}}">
-                <h3>{{ book.little_title }}</h3> 
+                <h3>{{ book.title }}</h3> 
               </a> 
               <a href="{{ book.image.url }}">
                  <img class='card-img-tsop' height="150" width="150" src="{{ book.image.url }}">
               </a>     
            
-          {% if book.summay != ""%}
+          {% if book.summary != ""%}
           <p>{{ book.summary }}</p>
           {% endif %}
          </div> 
