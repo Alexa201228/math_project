@@ -34,8 +34,11 @@
   
     <!-- Portfolio Section -->
     <section class="page-section">
-      <div class="container" style="max-width: 100%;">
+      <div class="container">
            <h3>{{ task.title }}</h3>
+           {% if task.theme != null %}
+           <p>{{ task.theme }}</p>
+           {% endif %}
            {% if task.image != null%}
            <img src="{{ task.image.url }}"/>
            {% endif %}

@@ -43,6 +43,9 @@
                     <a href="{% url 'task' h.id %}">
                        <h3>{{ h.title }}</h3>
                     </a>
+                    {% if h.theme != null%}
+                    <h5 style="color: gray;">{{ h.theme }}</h5>
+                    {% endif %}
                     {% if h.image != null %}
                       <img class="card-img-top" src="{{ h.image.url }}"/>
                       {% endif %}
