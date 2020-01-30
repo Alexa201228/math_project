@@ -84,7 +84,7 @@
                <hr/>
                <p>{{ t.solution }}</p>
                {% endif %}
-               {% if task.get_image_solution %}
+               {% if not task.image_solution.isempty %}
                 <a href="{{ task.image_solution.url }}">
                  <img class='card-img-tsop' src="{{ task.image_solution.url }}" style="max-width: 500px; max-height: 500px;">
                 </a>
