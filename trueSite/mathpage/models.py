@@ -11,4 +11,6 @@ class MathPage(models.Model):
     def __str__(self):
         return self.title + " " + self.theme
     
-    
+    def get_image_solution(self):
+        if self.image_solution != None:
+            return True

@@ -69,7 +69,7 @@
           <br/>
           <div class="container">
             {% for task in math_tasks.all %}
-          <br/>
+              <br/>
                   <h3>{{ task.title }}</h3> 
                 </a> 
                 <a href="{{ task.image.url }}">
@@ -79,16 +79,15 @@
             
                 {% if task.description != null %}
                 <p>{{ task.description }}</p>
-                
                 {% endif %}
-               {% if task.solution != null %}
+               {% if task.solution != None %}
                <hr/>
                <p>{{ t.solution }}</p>
                {% endif %}
-               {% if task.image_solution != null%}
-               <a href="{{ task.image_solution.url }}">
+               {% if task.get_image_solution %}
+                <a href="{{ task.image_solution.url }}">
                  <img class='card-img-tsop' src="{{ task.image_solution.url }}" style="max-width: 500px; max-height: 500px;">
-              </a>
+                </a>
               {% endif %}
               <hr class="divider"/>
           {% endfor %}
