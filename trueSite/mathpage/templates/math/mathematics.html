@@ -80,11 +80,11 @@
                 {% if task.description != null %}
                 <p>{{ task.description }}</p>
                 {% endif %}
-               {% if task.solution != None %}
+               {% if task.solution != null %}
                <hr/>
                <p>{{ t.solution }}</p>
                {% endif %}
-               {% if task.get_image_solution == True %}
+               {% if task.image_solution != null %}
                 <a href="{{ task.image_solution.url }}">
                  <img class='card-img-tsop' src="{{ task.image_solution.url }}" style="max-width: 500px; max-height: 500px;">
                 </a>
