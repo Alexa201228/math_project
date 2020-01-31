@@ -84,7 +84,7 @@
                 <p>{{ task.description }}</p>
                 {% endif %}
                {% if task.solution != null %}
-               <hr/>
+               <hr style="position: relative;"/>
                <p>{{ t.solution }}</p>
                {% endif %}
                {% if task.image_solution %}
@@ -92,7 +92,7 @@
                  <img class='card-img-tsop' src="{{ task.image_solution.url }}" style="max-width: 500px; max-height: 500px;">
                 </a>
               {% endif %}
-              <hr class="divider"/>
+              <hr class="divider" style="text-align: center;"/>
           {% endfor %}
           </div>
           
