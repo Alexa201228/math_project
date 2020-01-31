@@ -71,11 +71,11 @@
             {% for task in math_tasks.all %}
               <br/>
                   <h3>{{ task.title }}</h3> 
-                </a> 
+                  {% if task.image %}
                 <a href="{{ task.image.url }}">
                    <img class='card-img-tsop' src="{{ task.image.url }}" style="max-width: 700px;">
                 </a>     
-             
+                {% endif %}
             
                 {% if task.description != null %}
                 <p>{{ task.description }}</p>

@@ -41,10 +41,11 @@
               <a href="https://google.com/search?q={{book.title}}">
                 <h3>{{ book.title }}</h3> 
               </a> 
+              {% if book.image %}
               <a href="{{ book.image.url }}">
                  <img class='card-img-tsop' height="150" width="150" src="{{ book.image.url }}">
               </a>     
-           
+           {% endif %}
           {% if book.description != ""%}
           <p>{{ book.description }}</p>
           {% endif %}

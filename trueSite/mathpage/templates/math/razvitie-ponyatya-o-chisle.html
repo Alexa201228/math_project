@@ -66,10 +66,11 @@
           {% for t in tasks.all %}
         <br/>
                 <h3>{{ t.title }}</h3> 
-              </a> 
+                {% if t.image %} 
               <a href="{{ t.image.url }}">
                  <img class='card-img-tsop' src="{{ t.image.url }}" style="max-width: 700px;">
-              </a>     
+              </a> 
+              {% endif %}    
            {% if t.description != null %}
            <p>{{ t.description }}</p>
            
