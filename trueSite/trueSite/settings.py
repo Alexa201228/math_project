@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'homework.apps.HomeworkConfig',
     'metodics.apps.MetodicsConfig',
     'literature.apps.LiteratureConfig',
+    'students_works.apps.StudentsWorksConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

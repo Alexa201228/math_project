@@ -26,4 +26,5 @@ urlpatterns = [
     path('homework/', include('homework.urls')),
     path('literature/', include('literature.urls')),
     path('metodics/', include('metodics.urls')),
+    path('students/', include('students_works.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
