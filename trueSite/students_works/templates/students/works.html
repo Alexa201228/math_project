@@ -35,10 +35,10 @@
     <section class="page-section bg-white" id="portfolio">
         <br/>
         <div class="row">
-          <div class="col-lg-1" style="padding-left: 50px; scroll-behavior: auto; height: 300px; max-height: 200px; max-width: 200px;">
-          <div class="list-group" style="height: 150px; max-height: 200px; overflow: scroll; scroll-behavior: auto;">
+          <div class="col-lg-1" style="padding-left: 50px; scroll-behavior: auto; height: 300px; max-height: 200px; width: 300px;">
+          <div class="list-group" style="height: 150px; max-height: 200px; overflow: scroll;">
              {% for work in studworks.all %}
-        <a class="list-group-item" href="{{ work.presentation.url }}">
+        <a href="{{ work.presentation.url }}">
           <p> {{ work.title }} </p>
         </a>
         {% endfor %}
