@@ -35,7 +35,7 @@ def functions(request):
     return render(request,'math/functions-ich-grafiki-i-svoistva.html', {'tasks': tasks})
 
 def mnogogranniki(request):
-    tasks = MathPage.objects.filter(theme='Многранники и круглые тела')
+    tasks = MathPage.objects.filter(theme='Многогранники и круглые тела')
     return render(request,'math/mnogogranniki-i-kruglie-tela.html', {'tasks': tasks})
 
 def matan(request):
