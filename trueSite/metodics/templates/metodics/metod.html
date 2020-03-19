@@ -36,17 +36,11 @@
     <section class="page-section bg-white" id="portfolio">
         <br/>
         <div class="container" style="max-width: 100%; text-align: center;">
-        <a href="{% static 'оформление индивидуального проекта.doc' %}">
-          <h3 class="text-dark">Оформление индивидуального проекта</h3>
+        {% for m in metods.all %}
+        <a href = '{{ m.text_file.url }}'>
+          <h3 style="color: black;">{{ m.title }}</h3>
         </a>
-        <br/>
-        <a href="{% static 'ПРОЕКТЫ.doc' %}">
-            <h3 class="text-dark">Проекты</h3>
-          </a>
-          <br/>
-        <a href="{% static 'Методичка для заочников.doc' %}">
-            <h3 class="text-dark">Для студентов заочной формы обучения</h3>
-          </a>
+        {% endfor %}
         </div>
         
      </section>     
