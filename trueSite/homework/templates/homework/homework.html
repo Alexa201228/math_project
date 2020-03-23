@@ -49,6 +49,12 @@
                     {% if h.image %}
                       <img class="card-img-top" src="{{ h.image.url }}"/>
                       {% endif %}
+                      {% if h.homework_file %}
+                      <hr/>
+                      <a href="{{ h.homework_file.url }}">
+                        <p>{{ h.title }}</p>
+                      </a>
+                      {% endif %}
                    </div>
                  </div>
              </div>

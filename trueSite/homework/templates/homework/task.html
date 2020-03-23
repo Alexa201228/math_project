@@ -44,9 +44,15 @@
            {% endif %}
            <br/>
            <hr/>
-           {% if task.description != null%}
+           {% if task.description != null %}
            <p class="card-text">{{ task.description }}</p>
            {% endif %}
+           {% if task.homework_file %}
+             <hr/>
+             <a href="{{ task.homework_file.url }}">
+             <p>{{ task.title }}</p>
+              </a>
+            {% endif %}
       </div>
 
      </section>     
