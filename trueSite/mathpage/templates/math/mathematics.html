@@ -74,7 +74,7 @@
                   <p></p>
                   {% if task.image %}
                 <a href="{{ task.image.url }}">
-                   <img src="{{ task.image.url }}" style="max-width: 95vmax; max-height: auto; margin-left: auto; margin-right: auto;">
+                   <img src="{{ task.image.url }}" style="max-width: 100%; max-height: auto; margin-left: auto; margin-right: auto;">
                 </a>     
                 {% endif %}
             
@@ -87,7 +87,7 @@
                {% endif %}
                {% if task.image_solution %}
                 <a href="{{ task.image_solution.url }}">
-                 <img class='card-img-tsop' src="{{ task.image_solution.url }}" style="max-width: 95vmax; max-height: auto;">
+                 <img class='card-img-tsop' src="{{ task.image_solution.url }}" style="max-width: 100%; max-height: auto;">
                 </a>
               {% endif %}
               <hr class="divider" style="text-align: center;"/>
@@ -107,7 +107,7 @@
     <!-- Footer -->
     <footer class="bg-light py-5 footer" style="max-width: 100vmax;">
       
-        <div class="small text-center text-muted" style="max-width: 100vmax;">Copyright © Alexandra Gridneva {% now "Y" %}</div>
+        <div class="small text-center text-muted">Copyright © Alexandra Gridneva {% now "Y" %}</div>
       
     </footer>
   
