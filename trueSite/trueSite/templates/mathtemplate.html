@@ -68,7 +68,7 @@
                   <p></p>
                 {% if t.image %}
                 <a href="{{ t.image.url }}">
-                   <img src="{{ t.image.url }}" style="max-width: 100%; max-height: auto; margin-left: auto; margin-right: auto;">
+                   <img src="{{ t.image.url }}" style="max-width: 95vmax; max-height: auto; margin-left: auto; margin-right: auto;">
                 </a> 
                 {% endif %}
              {% if t.description != null %}
@@ -81,7 +81,7 @@
             {% endif %}
             {% if t.image_solution %}
             <a href="{{ t.image_solution.url }}">
-              <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 100%; max-height: auto;">
+              <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 95vmax; max-height: auto;">
            </a>
            {% endif %}
            <hr class="divider"/>
@@ -100,7 +100,7 @@
   
     <!-- Footer -->
     <footer class="bg-light py-5" style="max-width: 100vmax">
-        <div class="small text-center text-muted">Copyright © Alexandra Gridneva {% now "Y" %}</div>
+        <div class="small text-center text-muted" style="max-width: 100vmax">Copyright © Alexandra Gridneva {% now "Y" %}</div>
     </footer>
   
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
