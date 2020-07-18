@@ -48,12 +48,9 @@
           <div class="list-group">
             
             {% for t in mathtasks %}
-              {% for task in math_tasks}
-               {% if t.slug != task.slug %}
                <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
               {{ t.theme }}
               </a>
-                {% endif %}
             {% endfor %}
           </div>
   
