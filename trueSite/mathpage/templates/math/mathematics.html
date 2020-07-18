@@ -47,9 +47,7 @@
 
           <i><h1 class="my-4">Темы</h1></i>
           <div class="list-group" >
-           
-              
-               <a class="list-group-item" style="color: black;" href="">Все темы</a> 
+            
                {% for t in mathtasks %}
                {% ifchanged %}
                <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
