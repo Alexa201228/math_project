@@ -50,7 +50,7 @@
            
               
                <a class="list-group-item" style="color: black;" href="">Все темы</a> 
-               {% for t in math_tasks %}
+               {% for t in mathtasks %}
                {% ifchanged %}
                <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
               {{t.theme }}
@@ -66,7 +66,7 @@
         <div class="col-8" style="margin-left: auto; margin-right: auto;">
           <br/>
           <div class="container" style="margin-left: auto; margin-right: auto;">
-            {% for t in math_tasks %}
+            {% for t in mathtasks %}
           <br/>
                   <h3>{{ t.title }}</h3> 
                   <p></p>
