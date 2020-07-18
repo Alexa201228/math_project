@@ -47,8 +47,8 @@
           <i><h1 class="my-4">Темы</h1></i>
           <div class="list-group">
             
-               {% for t in mathtasks %}
-               {% for task in mathtasks}
+            {% for t in mathtasks %}
+              {% for task in mathtasks}
                {% if t.slug == task.slug %}
                <a class="list-group-item" style="color: black;" href="">
               {{ t.theme }}
@@ -57,9 +57,9 @@
               <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
                 {{ t.theme }}
                 </a>
-              {% endif %}
+                {% endif %}
               {% endfor %}
-              {% endfor %}
+            {% endfor %}
           </div>
   
         </div>
