@@ -6,4 +6,4 @@ from .models import MathPage
 class MathAdmin(admin.ModelAdmin):
     list_display = ('title', 'theme', 'slug')
     search_fields = ('title', 'theme')
-    prepopulated_fields = {'slug': ('title',)}
+    prepopulated_fields = {'slug': ('theme',)}
