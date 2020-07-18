@@ -6,8 +6,8 @@ def math(request):
     mathtasks = MathPage.objects.all()
     return render(request, 'math/mathematics.html', {'math_tasks': mathtasks})
 
-def category_theme(request, theme):
-    math_theme = Post.objects.filter(theme)
+def categoryTheme(request, theme):
+    math_theme = get_object_or_404(MathPage, slug=theme)
     return render(request, 'math/categories.html', {'math_tasks': math_theme})
     
 
