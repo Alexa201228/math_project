@@ -48,14 +48,10 @@
           <div class="list-group">
             
                <a class="list-group-item" style="color: black;"  href="{% url 'math' %}">Все темы</a> </li>  
-               {% for t in math_tasks %}
+               {% for t in mathtasks %}
                {% ifchanged %}
                <a class="list-group-item" style="color: black;" href="">
               {{ t.theme }}
-              </a>
-              {% else %}
-              <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
-                {{ t.theme }}
               </a>
               {% endifchanged %}
               {% endfor %}
