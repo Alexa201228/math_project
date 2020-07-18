@@ -50,7 +50,7 @@
                <a class="list-group-item" style="color: black;"  href="{% url 'math' %}">Все темы</a> </li>  
                {% for t in math_tasks %}
                {% ifchanged %}
-               <a class="list-group-item" style="color: black;" href="{% url 'math:'}">
+               <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
               {{ t.theme }}
               </a>
               {% endifchanged %}
