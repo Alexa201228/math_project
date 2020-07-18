@@ -51,7 +51,7 @@
               
                <a class="list-group-item" style="color: black;" href="">Все темы</a> 
                {% for t in tasks.all %}
-               <a class="list-group-item" style="color: black;" href="{{ t.get_absolute_url }}">
+               <a class="list-group-item" style="color: black;" href="{% url 'math:category' t.slug %}">
               {{t.title }}
               </a>
               {% endfor %}
