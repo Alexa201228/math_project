@@ -50,7 +50,7 @@
            
               
                <a class="list-group-item" style="color: black;" href="">Все темы</a> 
-               {% for t in tasks.all %}
+               {% for t in math_tasks %}
                <a class="list-group-item" style="color: black;" href="{% url 'category' t.theme %}">
               {{t.title }}
               </a>
