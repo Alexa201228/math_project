@@ -3,8 +3,8 @@ from django.shortcuts import render, get_object_or_404
 from .models import MathPage
 
 def math(request):
-    mathtasks = MathPage.objects
-    return render(request,'math/mathematics.html', {'math_tasks': mathtasks})
+    mathtasks = MathPage.objects.all()
+    return render(request, 'math/mathematics.html', {'math_tasks': mathtasks})
 
 def category_theme(request, theme):
     math_theme = get_object_or_404(MathPage, slug=theme)

@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.math, name="math"),
-    path('<slug:theme>/', views.category_theme, name='category')
+    path('<slug:slug>/', views.category_theme, name='category')
 ]
