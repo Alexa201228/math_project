@@ -49,11 +49,11 @@
             
                {% for t in math_tasks %}
                {% ifchanged %}
-               <a class="list-group-item" style="color: black;" href="">
+               <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
               {{ t.theme }}
               </a>
               {% else %}
-              <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
+              <a class="list-group-item" style="color: black;" href="">
                 {{ t.theme }}
                 </a>
               {% endifchanged %}
