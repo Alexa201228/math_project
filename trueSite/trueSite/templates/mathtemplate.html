@@ -51,7 +51,7 @@
                {% for t in math_tasks.all %}
                {% ifchanged %}
                <a class="list-group-item" style="color: black;" href="{% url 'math:'}">
-              {{t.title }}
+              {{ t.theme }}
               </a>
               {% endifchanged %}
               {% endfor %}
