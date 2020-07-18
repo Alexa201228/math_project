@@ -48,7 +48,7 @@
           <div class="list-group">
             
                <a class="list-group-item" style="color: black;"  href="{% url 'math' %}">Все темы</a> </li>  
-               {% for t in math_tasks %}
+               {% for t in math_tasks.all %}
                <a class="list-group-item" style="color: black;" href="{% url 'math:'}">
               {{t.title }}
               </a>
@@ -60,7 +60,7 @@
         <div class="col-8" style="margin-left: auto; margin-right: auto;">
           <br/>
           <div class="container" style="margin-right: auto; margin-right: auto;">
-            {% for t in math_tasks %}
+            {% for t in math_tasks.all %}
           <br/>
                   <h3>{{ t.title }}</h3> 
                   <p></p>
