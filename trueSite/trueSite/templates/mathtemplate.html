@@ -4,7 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+{% block content %}
+{% endblock %}
   
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
@@ -47,10 +48,8 @@
           <div class="list-group">
             
             {% for t in mathtasks %}
-              {% for task in mathtasks}
-               {% if t.slug == task.slug %}
-               {% block content %}
-                {% endblock %}
+              {% for task in math_tasks}
+               {% if t.slug != task.slug %}
                <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
               {{ t.theme }}
               </a>
