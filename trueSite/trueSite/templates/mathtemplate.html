@@ -47,11 +47,15 @@
           <i><h1 class="my-4">Темы</h1></i>
           <div class="list-group">
             
-               {% for t in mathtasks %}
+               {% for t in math_tasks %}
                {% ifchanged %}
                <a class="list-group-item" style="color: black;" href="">
               {{ t.theme }}
               </a>
+              {% else %}
+              <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
+                {{ t.theme }}
+                </a>
               {% endifchanged %}
               {% endfor %}
           </div>
