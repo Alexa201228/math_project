@@ -50,7 +50,7 @@
           <div class="list-group">
             {% for theme in themes %}
             {% if t.theme != theme.theme %}
-            <a class="list-group-item" style="color: black;" href="{{ theme.slug }}">
+            <a class="list-group-item" style="color: black;" href="{% url 'theme.slug' %}">
            {{theme.theme}}
             </a>
             {% endif %}
