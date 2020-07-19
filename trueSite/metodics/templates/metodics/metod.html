@@ -37,13 +37,14 @@
     <section class="page-section bg-white" id="portfolio">
         <br/>
         <div class="container" style="max-width: 100%; text-align: center;">
-        {% for m in metods.all %}
-        {% include 'paginator.html' with page=metods%}
+        {% for m in metods %}
+        
         <a href = '{{ m.text_file.url }}'>
           <h3 style="color: black;">{{ m.title }}</h3>
         </a>
         <p></p>
         {% endfor %}
+        {% include 'paginator.html' with page=metods %}
         </div>
         
      </section>     
