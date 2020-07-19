@@ -19,6 +19,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-creative/5.1.8/css/creative.min.css" rel="stylesheet">
   
   </head>
+  
   {% load static %}
   <body id="page-top">
 
@@ -37,6 +38,7 @@
         <br/>
         <div class="container" style="max-width: 100%; text-align: center;">
         {% for m in metods.all %}
+        {% include 'paginator.html' with page=metods%}
         <a href = '{{ m.text_file.url }}'>
           <h3 style="color: black;">{{ m.title }}</h3>
         </a>
