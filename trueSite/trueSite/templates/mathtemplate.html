@@ -49,9 +49,11 @@
             {% endblock %}
           <div class="list-group">
             {% for theme in themes %}
-            
+            {% if t.theme != theme.theme %}
             <a class="list-group-item" style="color: black;" href="{{ theme.slug }}">
-           </a>
+           {{theme.theme}}
+            </a>
+            {% endif %}
            {% endfor %}
            {% endifchanged %}
             {% endfor %}
