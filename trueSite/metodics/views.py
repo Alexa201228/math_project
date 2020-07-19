@@ -12,4 +12,4 @@ def metod(request):
         metod = paginator.page(1)
     except EmptyPage:
         metod = paginator.page(paginator.num_pages)
-    return render(request, 'metodics/metod.html', {'metods': metods, 'page': page})
+    return render(request, 'metodics/metod.html', {'page': page, 'metods': metods})
