@@ -45,10 +45,20 @@
 {% for t in math_tasks %}
           {% ifchanged %}
           <i><h1 class="my-4">{{ t.theme }}</h1></i>
+          <div class="list-group">
+            {% for theme in themes %}
+            
+            
             {% block content %}
             {% endblock %}
+            {% if t.theme != theme.theme }
+            <a class="list-group-item" style="color: black;" href="{{ theme.slug }}">
+           
+           </a>
+           {% endif %}
            {% endifchanged %}
             {% endfor %}
+          </div>
   
         </div>
         

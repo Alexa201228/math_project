@@ -8,7 +8,8 @@ def math(request):
 
 def categoryTheme(request, theme):
     math_theme = MathPage.objects.filter(slug=theme)
-    return render(request, 'math/categories.html', {'math_tasks': math_theme})
+    all_themes = MathPage.objects.all()
+    return render(request, 'math/categories.html', {'math_tasks': math_theme, 'themes': all_themes})
     
 
 # def ponyatia_o_chisle(request):
