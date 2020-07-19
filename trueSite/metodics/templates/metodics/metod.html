@@ -44,8 +44,9 @@
           <h3 style="color: black;">{{ m.title }}</h3>
         </a>
         <p></p>
+        {% include 'paginator.html' with page=metods %}
         {% endfor %}
-        {% include 'paginator.html' with page=m %}
+        
         {% endblock %}
         </div>
         
