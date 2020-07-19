@@ -37,6 +37,7 @@
     <section class="page-section bg-white" id="portfolio">
         <br/>
         <div class="container" style="max-width: 100%; text-align: center;">
+         {% block content %} 
         {% for m in metods %}
         
         <a href = '{{ m.text_file.url }}'>
@@ -45,6 +46,7 @@
         <p></p>
         {% endfor %}
         {% include 'paginator.html' with page=metods %}
+        {% endblock %}
         </div>
         
      </section>     
