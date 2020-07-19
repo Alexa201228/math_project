@@ -42,20 +42,13 @@
     
       <div class="row" style="width: 99vw;">
         <div class="col-3" style="padding-left: 100px; max-width: fit-content;">
-
-          <i><h1 class="my-4">Темы</h1></i>
-          <div class="list-group">
-            
-            {% for t in math_tasks %}
-            {% ifchanged %}
+{% for t in math_tasks %}
+          {% ifchanged %}
+          <i><h1 class="my-4">{{ t.theme }}</h1></i>
             {% block content %}
             {% endblock %}
-            <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
-           {{ t.theme }}
-           </a>
            {% endifchanged %}
             {% endfor %}
-          </div>
   
         </div>
         
