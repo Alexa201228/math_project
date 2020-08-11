@@ -2,4 +2,9 @@ from django.contrib import admin
 
 from .models import MetodPage
 
-admin.site.register(MetodPage)
+@admin.register(MetodPage)
+class MethodAdmin(admin.ModelAdmin):
+    list_display = ('title', )
+    list_filter = ('title',)
+    search_fields = ('title',)
+    
