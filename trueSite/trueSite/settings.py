@@ -27,11 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-<<<<<<< HEAD
-SITE_ID=1
-=======
 SITE_ID = 1
->>>>>>> 5f38b4aff5c2c23531a70dcaa593e42c74c7c617
+
 # Application definition
 
 INSTALLED_APPS = [
