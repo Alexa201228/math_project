@@ -48,12 +48,14 @@
 
     </h4> 
             
-    {% empty %}     
+    {% empty %}
+    
     <p>Результатов не найдено.</p>    
     {% endfor %}    
-    <div style="margin-left: auto; margin-right: auto;">
-        {% include 'paginator.html' with page=results %}
-    </div>
+        {% endif %}
+        <div style="margin-left: auto; margin-right: auto;">
+            {% include 'paginator.html' with page=results %}
+        </div>  
         {% endblock %}
 
     </div>
