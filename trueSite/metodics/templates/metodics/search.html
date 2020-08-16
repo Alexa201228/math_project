@@ -42,18 +42,23 @@
     {% if query %}    
     <h1>Материалы, с ключевым словом "{{ query }}"</h1> 
        <h3>{% with results.count as total_results %}
-            Всего найдено {{ total_results }} совпадени{{ total_results|pluralize }}      
+            Всего найдено: {{ total_results }}     
             {% endwith %}
         </h3>{% for post in results %}      
     <h4><a href="{{ post.text_field.url }}">{{ post.title }}</a>
-    </h4>         
+
+    </h4> 
+            
     {% empty %}      
     <p>Результатов не найдено.</p>    
     {% endfor %}    
+    <div style="text-align: center;">
+        {% include 'paginator.html' with page=metods %}
+    </div>
     <p><a href="{% url 'metod_search' %}">Искать снова</a></p>  
     {% else %}    
     <h1>Искать</h1>   
-     <form method="get">      
+     <form method="GET">      
          {{ form.as_p }}      
          <input type="submit" value="Поиск" placeholder="Search...">    
         </form>  {% endif %}
