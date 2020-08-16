@@ -25,10 +25,7 @@ SECRET_KEY = 'r1#=sf4-iz_$b93#6ip)13oga5h8d19q+s4-z1gl1lpa-b#n8u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-SITE_ID = 1
-
+ALLOWED_HOSTS =SITE_ID=1
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'django.contrib.postgres',
 ]
 
 MIDDLEWARE = [
