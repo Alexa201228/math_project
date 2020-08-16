@@ -1,4 +1,4 @@
-<html lang="en"><head>
+<html lang="ru"><head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,7 +42,7 @@
     {% if query %}    
     <h1>Материалы, с ключевым словом "{{ query }}"</h1> 
        <h3>{% with results.count as total_results %}
-            Всего найдено {{ total_results }} result{{ total_results|pluralize }}      
+            Всего найдено {{ total_results }} совпадени{{ total_results|pluralize }}      
             {% endwith %}
         </h3>{% for post in results %}      
     <h4><a href="{{ post.text_field.url }}">{{ post.title }}</a>
