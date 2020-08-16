@@ -52,16 +52,18 @@
     {% empty %}      
     <p>Результатов не найдено.</p>    
     {% endfor %}    
-    <div style="text-align: center;">
-        {% include 'paginator.html' with page=metods %}
-    </div>
+
     <p><a href="{% url 'metod_search' %}">Искать снова</a></p>  
     {% else %}    
     <h1>Искать</h1>   
      <form method="GET">      
          {{ form.as_p }}      
          <input type="submit" value="Поиск" placeholder="Search...">    
-        </form>  {% endif %}
+        </form>  
+        {% endif %}
+        <div style="text-align: center;">
+            {% include 'paginator.html' with page=metods %}
+        </div>
         {% endblock %}
 
     </div>
