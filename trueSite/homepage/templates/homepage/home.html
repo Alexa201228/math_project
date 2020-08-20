@@ -65,7 +65,17 @@ li.dropdown {
   display: block;
 }
   </style>
-
+<script>
+  function toogle_func(){
+    var x = document.getElementById("myDropdown");
+    if(x.style.display == "block"){
+      x.style.display = "none";
+    }
+    else{
+      x.style.display = "block";
+    }
+  }
+  </script>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="padding: 0 5vw;" id="mainNav">
       <div class="container text-white" >
@@ -80,7 +90,7 @@ li.dropdown {
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link js-scroll-trigger dropbtn" href="#">Разделы</a>
-              <div class="dropdown-content">
+              <div class="dropdown-content" oncanplay="toogle_func()" id="myDropdown">
                 {% for link in home.all %}
                 <a style="font-size: 9pt;" href="{{ link.url }}">{{ link.description }}</a>
                 {% endfor %}
