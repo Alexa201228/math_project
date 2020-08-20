@@ -90,7 +90,7 @@ li.dropdown {
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link js-scroll-trigger dropbtn" href="#">Разделы</a>
-              <div class="dropdown-content" oncanplay="toogle_func()" id="myDropdown">
+              <div class="dropdown-content" id="myDropdown" onclick="myDropdown()">
                 {% for link in home.all %}
                 <a style="font-size: 9pt;" href="{{ link.url }}">{{ link.description }}</a>
                 {% endfor %}
