@@ -82,7 +82,7 @@ li.dropdown {
               <a class="nav-link js-scroll-trigger dropbtn" href="#">Разделы</a>
               <div class="dropdown-content">
                 {% for link in home.all %}
-                <a href="{{ link.url }}">{{ link.title }}</a>
+                <a href="{{ link.url }}">{{ link.description }}</a>
                 {% endfor %}
               </div>
             </li>
