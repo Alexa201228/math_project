@@ -7,5 +7,9 @@ class MathAdmin(admin.ModelAdmin):
     search_fields = ('title', 'theme')
     prepopulated_fields = {'slug': ('theme',)}
     list_filter = ('theme', )
-    autocomplete_fields = ['theme']
     list_per_page = 10
+
+@admin.register(MathPage)
+class AdminChoice(admin.ModelAdmin):
+    autocomplete_fields = ['theme']
+
