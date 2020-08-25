@@ -3,7 +3,7 @@ from django.urls import reverse
 
 class MathPage(models.Model):
     title = models.CharField(max_length=100, blank=True, default='')
-    theme = models.CharField(max_length=100, null=True)
+    theme = models.ForeignKey('self', max_length=100, null=True)
     image = models.ImageField(upload_to='math_images/', blank=True, null=True)
     description = models.TextField(blank=True, default='')
     solution = models.TextField(blank=True, default='')
