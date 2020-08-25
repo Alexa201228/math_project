@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 class Theme(models.Model):
-    thema = models.CharField(max_length=200, null=True, default='')
+    thema = models.CharField(max_length=200, unique=True, default='')
 
 class MathPage(models.Model):
     title = models.CharField(max_length=100, blank=True, default='')
