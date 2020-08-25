@@ -6,7 +6,7 @@ class Themes(models.Model):
 
 class MathPage(models.Model):
     title = models.CharField(max_length=100, blank=True, default='')
-    theme = models.ForeignKey("Themes", on_delete=models.CASCADE)
+    theme = models.ManyToManyField(Themes)
     image = models.ImageField(upload_to='math_images/', blank=True, null=True)
     description = models.TextField(blank=True, default='')
     solution = models.TextField(blank=True, default='')
