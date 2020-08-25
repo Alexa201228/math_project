@@ -9,10 +9,9 @@ class MathAdmin(admin.ModelAdmin):
     list_per_page = 10
     autocomplete_fields = ['theme']
 
-@admin.register(Theme)
 class ThemeAdmin(admin.ModelAdmin):
     search_fields = ['thema']
 
-
+admin.site.register(Theme, ThemeAdmin)
 
 
