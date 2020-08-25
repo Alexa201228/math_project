@@ -8,3 +8,4 @@ class MathAdmin(admin.ModelAdmin):
     search_fields = ('title', 'theme')
     prepopulated_fields = {'slug': ('theme',)}
     list_filter = ('theme', )
+    raw_fields = ('theme',)
