@@ -10,7 +10,7 @@ class MathAdmin(admin.ModelAdmin):
     autocomplete_fields = ['theme']
 
 class ThemeAdmin(admin.ModelAdmin):
-    search_fields = ('theme')
+    search_fields = ('theme',)
 
 admin.site.register(ThemeAdmin)
 
