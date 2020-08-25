@@ -11,7 +11,7 @@ class MathAdmin(admin.ModelAdmin):
 
 @admin.register(Theme)
 class ThemeAdmin(admin.ModelAdmin):
-    search_fields = ('theme',)
+    search_fields = ['thema']
 
 
 
