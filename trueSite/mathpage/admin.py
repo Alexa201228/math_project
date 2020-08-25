@@ -1,5 +1,4 @@
 from django.contrib import admin
-from coffeehouse.items.models import Item
 from .models import MathPage
 
 @admin.register(MathPage)
