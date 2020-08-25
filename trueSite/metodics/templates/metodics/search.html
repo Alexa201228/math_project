@@ -59,12 +59,8 @@
             
     {% empty %}
     <p>Результатов не найдено.</p>    
-    {% endfor %}  
-    <div style="display: flex; align-items: center; justify-content: center;">
-      {% include 'paginator.html' with page=results %}
-    </div>  
+    {% endfor %}    
     {% endif %}
-
     {% endblock %}
 
     </div>
