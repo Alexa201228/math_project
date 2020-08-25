@@ -8,8 +8,5 @@ class MathAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('theme',)}
     list_filter = ('theme', )
     list_per_page = 10
-
-@admin.register(MathPage)
-class AdminChoice(admin.ModelAdmin):
     autocomplete_fields = ['theme']
 
