@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MathPage, Themes
+from .models import MathPage
 
 @admin.register(MathPage)
 class MathAdmin(admin.ModelAdmin):
