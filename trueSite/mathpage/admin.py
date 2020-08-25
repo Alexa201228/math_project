@@ -12,6 +12,6 @@ class MathAdmin(admin.ModelAdmin):
 class ThemeAdmin(admin.ModelAdmin):
     search_fields = ('theme',)
 
-admin.site.register(ThemeAdmin)
+admin.site.register(MathPage, ThemeAdmin)
 
 
