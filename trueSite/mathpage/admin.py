@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MathPage
+from .models import MathPage, Theme
 
 @admin.register(MathPage)
 class MathAdmin(admin.ModelAdmin):
@@ -7,7 +7,11 @@ class MathAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('theme',)}
     list_filter = ('theme', )
     list_per_page = 10
-    search_fields = ('theme','title')
+    autocomplete_fields = ['theme']
+
+@admin.register(Theme)
+class ThemeAdmin(admin.ModelAdmin):
+    search_fields = ('theme',)
 
 
 
