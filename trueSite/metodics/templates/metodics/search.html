@@ -48,7 +48,7 @@
         <div class="container" style="max-width: 100%; text-align: center;">
     {% block content %}  
     {% if query %}    
-    <h1>Материалы, с ключевым словом "{{ query }}"</h1> 
+    <h1>Материалы с ключевым словом "{{ query }}"</h1> 
        <h3>{% with results.count as total_results %}
             Всего найдено: {{ total_results }}     
             {% endwith %}
@@ -59,11 +59,12 @@
             
     {% empty %}
     <p>Результатов не найдено.</p>    
-    {% endfor %}    
-    {% endif %}
+    {% endfor %}  
     <div style="display: flex; align-items: center; justify-content: center;">
       {% include 'paginator.html' with page=results %}
-    </div>
+    </div>  
+    {% endif %}
+
     {% endblock %}
 
     </div>
