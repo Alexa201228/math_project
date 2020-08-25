@@ -4,7 +4,7 @@ from django.urls import reverse
 
 class MathPage(models.Model):
     title = models.CharField(max_length=100, blank=True, default='')
-    theme = models.CharField(max_length=200, blank=True, null=True, default='')
+    theme = models.CharField(max_length=200, null=True, default='')
     image = models.ImageField(upload_to='math_images/', blank=True, null=True)
     description = models.TextField(blank=True, default='')
     solution = models.TextField(blank=True, default='')
