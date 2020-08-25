@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from coffeehouse.items.models import Item
 from .models import MathPage
 
 @admin.register(MathPage)
@@ -9,3 +9,4 @@ class MathAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('theme',)}
     list_filter = ('theme', )
     autocomplete_fields = ['theme']
+    list_per_page = 10
