@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MathPage
+from .models import MathPage, Theme
 from dal import autocomplete
 from django import forms
 
@@ -17,4 +17,4 @@ class form(forms.ModelForm):
             'theme': autocomplete.ModelSelect2(url='theme-autocomplete')
         }
 
-
+admin.site.register(Theme)
