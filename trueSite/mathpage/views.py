@@ -11,6 +11,9 @@ class ThemeAutocomplete(autocomplete.Select2QuerySetView):
         if self.q:
             qs = qs.filter(theme__istartswith=self.q)
         return qs
+
+    def has_add_permission(self, request):
+        return True
     def get_create_option(self, context, q):
         """Form the correct create_option to append to results."""
         create_option = []
