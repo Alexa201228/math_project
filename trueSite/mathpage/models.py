@@ -7,7 +7,7 @@ class MathPage(models.Model):
     theme = models.CharField(max_length=200, null=True)
     image = models.ImageField(upload_to='math_images/', blank=True, null=True)
     description = models.TextField(blank=True, default='')
-    solution = models.TextField(blank=True, default='')
+    fileSolution = models.FileField(blank=True)
     slug = models.SlugField(max_length=250, default='')
     image_solution = models.ImageField(upload_to='math_images/', blank=True, null=True)
 
