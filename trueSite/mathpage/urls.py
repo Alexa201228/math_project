@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.math, name="math"),
-    path('<slug:theme>/', views.categoryTheme, name='category')
+    path('<slug:theme>/', views.categoryTheme, name='category'),
+    url(r'theme-autocomplete/$', views.ThemeAutocomplete.as_view(), name='theme-autocomplete',),
 ]
