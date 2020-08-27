@@ -43,11 +43,11 @@
     <!-- Portfolio Section -->
     <section class="page-section bg-white" id="portfolio">
         <br/>
-        <div class="row" style="max-width: 99vmax;">
-          <div class="col" style="text-align: center; max-width: fit-content;">
+        <div class="row" style="max-width: 99vmax; align-content: center;">
+          <div class="col" style="text-align: center;">
              {% for work in studworks.all %}
              <p>{{ work.title }}</p>
-             <iframe src="{{work.source}}"  width="640" height="480"></iframe>
+             <iframe src="{{ work.source }}"  width="640" height="480"></iframe>
          <p> <a href="{{ work.presentation.url }}">
          {{ work.title }} 
         </a></p>
