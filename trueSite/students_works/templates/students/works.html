@@ -43,8 +43,8 @@
     <!-- Portfolio Section -->
     <section class="page-section bg-white" id="portfolio">
         <br/>
-        <div class="row" style="align-content: center; max-width: 99vw;">
-          <div class="col" style="text-align: center; max-width: 99vw;">
+        <div class="row" style="align-content: center; width: 99vw;">
+          <div class="col" style="text-align: center; width: 99vw;">
              {% for work in studworks.all %}
              <h3>{{ work.title }}</h3>
              <br/>
@@ -64,10 +64,8 @@
 
   
     <!-- Footer -->
-    <footer class="bg-light py-5">
-      <div class="container" style="width: 100%;">
+    <footer class="bg-light py-5"  style="display: block; box-sizing: border-box; flex-shrink: 0;">
         <div class="small text-center text-muted">Copyright © Alexandra Gridneva {% now "Y" %}</div>
-      </div>
     </footer>
   
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
