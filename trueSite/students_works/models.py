@@ -8,5 +8,5 @@ class StudentsWorks(models.Model):
         return str(self.presentation)[14:]
 
     def title(self):
-        return str(self.presentation)[14:]
+        return str(self.presentation)[14:len(str(self.presentation)) - 5]
 
