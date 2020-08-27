@@ -44,18 +44,22 @@
     <section class="page-section bg-white" id="portfolio">
         <br/>
         <div class="row" style="max-width: 99vmax;">
-          <div class="col-lg-2" style="padding-left: 50px; padding-bottom: 50px; scroll-behavior: auto; max-height: 30vh; max-width: fit-content;">
-          <div class="list-group" style="max-height: 30vh; overflow: scroll;">
+          <div class="col" style="text-align: center; max-width: fit-content;">
              {% for work in studworks.all %}
-        <a href="{{ work.presentation.url }}">
-          <p> {{ work.title }} </p>
-        </a>
+             <p>{{ work.title }}</p>
+             <iframe scr="{{work.source}}"  width="640" height="480"></iframe>
+         <p> <a href="{{ work.presentation.url }}">
+         {{ work.title }} 
+        </a></p>
+        <br/>
+        <hr class="divider"/>
+        <br/>
+        <br/>
         {% endfor %}
-          </div>
         </div>
-           <div class="col" style="text-align: center;">
+           <!-- <div class="col" style="">
             <p>Бином Ньютона</p>
-            <iframe src="https://drive.google.com/file/d/1R6UcIDah_OE7AZX8SwyKIqcFNAfNEic3/preview" width="640" height="480"></iframe>
+            <iframe src="https://drive.google.com/file/d/1R6UcIDah_OE7AZX8SwyKIqcFNAfNEic3/preview"></iframe>
             <br/>
         <br/>
         <hr class="divider"/>
@@ -82,7 +86,7 @@
         <hr class="divider"/>
         </div> 
            
-          
+           -->
       </div> 
           
 
