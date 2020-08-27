@@ -47,6 +47,8 @@
           <div class="col" style="text-align: center;">
              {% for work in studworks.all %}
              <h3>{{ work.title }}</h3>
+             <br/>
+             <br/>
              <iframe src="{{ work.source }}"  width="640" height="480"></iframe>
              <br/>
          <p> <a href="{{ work.presentation.url }}">
