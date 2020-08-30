@@ -20,21 +20,14 @@ def metod(request):
 def metod_search(request):
     form = SearchForm()
     query = None
-    context = {}
     results = MetodPage.objects.all().order_by('title')
     if 'query' in request.GET:
         form = SearchForm(request.GET)
         if form.is_valid():
             query = form.cleaned_data['query']
             results = MetodPage.objects.annotate(similarity=TrigramSimilarity('title', query),).filter(similarity__gt=0.1).order_by('-similarity').order_by('title')
-            paginator = Paginator(results, 10)
-            page = request.GET.get('page')
-            try:
-                context['results'] = paginator.page(page)
-            except PageNotAnInteger:
-                context['results'] = paginator.page(1)
-            except EmptyPage:
-                context['results'] = paginator.page(paginator.num_pages)
 
     return render(request, 'metodics/search.html',
-                    context=context)
+                    {'form': form,
+                    'query':query,
+                    'results':results})

@@ -30,7 +30,6 @@
   </head>
   
   {% load static %}
-  {% load i18n %}
   <body id="page-top">
 
     <!-- Navigation -->
@@ -48,30 +47,27 @@
         <br/>
         <div class="container" style="max-width: 100%; text-align: center;">
     {% block content %}  
-        <ul>
-              {% if  results.has_previous %}
-                 <li>
-                     <a class="Next" href="?page={{ articles.previous_page_number }}{% if request.GET.query %}&q= 
-                               {{request.GET.query }}{% endif %}">{% trans 'Предыдущая' %}
-                     </a>
-                   </li>
-                {% endif %}
-                {% for n in results.paginator.page_range %}
-                     {% if n > results.number|add:-4 and n < results.number|add:4 %}
-                           <li class='{% if n == results.number %}active{% else %}no-active{% endif %}'>
-                                 <a href='?page={{ n }}{% if request.GET.query %}&q={{ request.GET.query }}{% endif %}'>{{ n }}</a>
-                            </li>
-                       {% endif %}
-                 {% endfor %}
-         
-                 {% if results.has_next %}
-                     <li>
-                          <a class="Next" href="?page=
-                                        {{ results.next_page_number }}{% if request.GET.query %}&q={{ request.GET.query }}{% endif %}">
-                                              {% trans 'Следующая' %}</a>
-                     </li>
-                  {% endif %}
-         </ul>
+    {% if query %}    
+    <h1>Материалы с ключевым словом "{{ query }}"</h1> 
+       <h3>{% with results.count as total_results %}
+            Всего найдено: {{ total_results }}     
+            {% endwith %}
+        </h3>{% for post in results %}      
+    <h3>{{ post.title }}
+
+    </h3>
+    {% if post.description %} 
+    <p>
+      <img src="{{ post.description.url }}">
+    </p>
+    {% endif %}
+        <p>
+          <a href="{{ post.text_field.url }}">Скачать</a>  
+        </p>  
+    {% empty %}
+    <p>Результатов не найдено.</p>    
+    {% endfor %}
+    {% endif %}
     {% endblock %}
 
     </div>
