@@ -53,10 +53,11 @@
 
         {% for m in metods %}
         <h3 style="color: black;">{{ m.title }}</h3>
+        {% if m.description %}
         <p>
           <img src="{{ m.description.url }}">
         </p>
-        
+        {% endif %}
         <p><a href = '{{ m.text_file.url }}'>
           Скачать
         </a></p>

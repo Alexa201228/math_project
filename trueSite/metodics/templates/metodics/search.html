@@ -55,10 +55,12 @@
         </h3>{% for post in results %}      
     <h3>{{ post.title }}
 
-    </h3> 
+    </h3>
+    {% if post.description %} 
     <p>
       <img src="{{ post.description.url }}">
     </p>
+    {% endif %}
         <p>
           <a href="{{ post.text_field.url }}">Скачать</a>  
         </p>  
