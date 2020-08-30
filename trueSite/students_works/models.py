@@ -11,5 +11,6 @@ class StudentsWorks(models.Model):
     def title(self):
         if self.name:
             return self.name
-        return str(self.presentation)[14:len(str(self.presentation)) - 5]
+        else:
+            return str(self.presentation)[14:len(str(self.presentation)) - 5]
 
