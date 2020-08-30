@@ -55,8 +55,8 @@
         <ul>
               {% if  results.has_previous %}
                  <li>
-                     <a class="Next" href="?page={{ articles.previous_page_number }}{% if request.GET.q %}&q= 
-                               {{request.GET.q }}{% endif %}">{% trans 'Предыдущая' %}
+                     <a class="Next" href="?page={{ articles.previous_page_number }}{% if request.GET.query %}&q= 
+                               {{request.GET.query }}{% endif %}">{% trans 'Предыдущая' %}
                      </a>
                    </li>
                 {% endif %}
