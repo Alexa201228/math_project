@@ -5,7 +5,7 @@ from .forms import SearchForm
 from django.contrib.postgres.search import TrigramSimilarity
 
 def metod(request):
-    metods = MetodPage.objects.all().order_by('-title')
+    metods = MetodPage.objects.all().order_by('title')
     paginator = Paginator(metods, 10)
     page = request.GET.get('page')
     try:
