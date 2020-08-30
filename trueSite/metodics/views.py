@@ -39,4 +39,4 @@ def metod_search(request):
                     {'form': form,
                     'query':query,
                     'page': page,
-                    'results':results})
+                    'results':metod})
