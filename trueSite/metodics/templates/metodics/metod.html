@@ -52,11 +52,14 @@
          {% block content %}
 
         {% for m in metods %}
+        <h3 style="color: black;">{{ m.title }}</h3>
+        <p>
+          <img src="{{ m.description.url }}">
+        </p>
         
-        <a href = '{{ m.text_file.url }}'>
-          <h3 style="color: black;">{{ m.title }}</h3>
-        </a>
-        <p></p>
+        <p><a href = '{{ m.text_file.url }}'>
+          Скачать
+        </a></p>
         {% endfor %}
         <div style="display: flex; align-items: center; justify-content: center;">
         {% include 'paginator.html' with page=metods %}

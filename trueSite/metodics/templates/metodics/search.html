@@ -53,10 +53,15 @@
             Всего найдено: {{ total_results }}     
             {% endwith %}
         </h3>{% for post in results %}      
-    <h4><a href="{{ post.text_field.url }}">{{ post.title }}</a>
+    <h3>{{ post.title }}
 
-    </h4> 
-            
+    </h3> 
+    <p>
+      <img src="{{ post.description.url }}">
+    </p>
+        <p>
+          <a href="{{ post.text_field.url }}">Скачать</a>  
+        </p>  
     {% empty %}
     <p>Результатов не найдено.</p>    
     {% endfor %}    
