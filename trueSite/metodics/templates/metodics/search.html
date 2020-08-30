@@ -67,10 +67,11 @@
     {% empty %}
     <p>Результатов не найдено.</p>    
     {% endfor %}
+      
+    {% endif %}
     <div style="display: flex; align-items: center; justify-content: center;">
       {% include 'paginator.html' with page=metods %}
-      </div>    
-    {% endif %}
+      </div>  
     {% endblock %}
 
     </div>
