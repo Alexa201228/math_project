@@ -20,7 +20,7 @@ def metod(request):
 def metod_search(request):
     form = SearchForm()
     query = None
-    results = []
+    results = MetodPage.objects.all().order_by('title')
     if 'query' in request.GET:
         form = SearchForm(request.GET)
         if form.is_valid():
@@ -38,5 +38,4 @@ def metod_search(request):
     return render(request, 'metodics/search.html',
                     {'form': form,
                     'query':query,
-                    'page': page,
                     'results':metod})
