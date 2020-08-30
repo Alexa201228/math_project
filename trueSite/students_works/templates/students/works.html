@@ -51,10 +51,12 @@
              <br/>
              <iframe src="{{ work.source }}"  width="640" height="480"></iframe>
              <br/>
+             {% if work.presentation %}
          <p> <a href="{{ work.presentation.url }}">
          <p>Скачать файл</p> 
-        </a></p>
+        </a></p>    
         <br/>
+        {% endif %}
         <hr class="divider"/>
         <br/>
         {% endfor %}
