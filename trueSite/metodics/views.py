@@ -25,10 +25,7 @@ def metod_search(request):
         form = SearchForm(request.GET)
         if form.is_valid():
             query = form.cleaned_data['query']
-            results = MetodPage.objects.annotate(similarity=TrigramSimilarity('title', query),)
-            .filter(similarity__gt=0.1)
-            .order_by('-similarity')
-            .order_by('title')
+            results = MetodPage.objects.annotate(similarity=TrigramSimilarity('title', query),).filter(similarity__gt=0.1).order_by('-similarity').order_by('title')
             paginator = Paginator(results, 10)
             page = request.GET.get('page')
             try:
@@ -41,4 +38,5 @@ def metod_search(request):
     return render(request, 'metodics/search.html',
                     {'form': form,
                     'query':query,
+                    'page': page,
                     'results':results})
