@@ -20,6 +20,7 @@ def metod(request):
 def metod_search(request):
     form = SearchForm()
     query = None
+    context = {}
     results = MetodPage.objects.all().order_by('title')
     if 'query' in request.GET:
         form = SearchForm(request.GET)
@@ -29,13 +30,11 @@ def metod_search(request):
             paginator = Paginator(results, 10)
             page = request.GET.get('page')
             try:
-                metod = paginator.page(page)
+                context['results'] = paginator.page(page)
             except PageNotAnInteger:
-                metod = paginator.page(1)
+                context['results'] = paginator.page(1)
             except EmptyPage:
-                metod = paginator.page(paginator.num_pages)
+                context['results'] = paginator.page(paginator.num_pages)
 
     return render(request, 'metodics/search.html',
-                    {
-                    'query':query,
-                    'results': metod})
+                    context=context)
