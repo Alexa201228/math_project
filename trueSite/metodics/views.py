@@ -26,14 +26,14 @@ def metod_search(request):
         if form.is_valid():
             query = form.cleaned_data['query']
             results = MetodPage.objects.annotate(similarity=TrigramSimilarity('title', query),).filter(similarity__gt=0.1).order_by('-similarity').order_by('title')
-    paginator = Paginator(results, 10)
-    page = request.GET.get('page')
-    try:
-        metod = paginator.page(page)
-    except PageNotAnInteger:
-        metod = paginator.page(1)
-    except EmptyPage:
-        metod = paginator.page(paginator.num_pages)
+            paginator = Paginator(results, 10)
+            page = request.GET.get('page')
+            try:
+                metod = paginator.page(page)
+            except PageNotAnInteger:
+                metod = paginator.page(1)
+            except EmptyPage:
+                metod = paginator.page(paginator.num_pages)
 
     return render(request, 'metodics/search.html',
                     {
