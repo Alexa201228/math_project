@@ -36,7 +36,6 @@ def metod_search(request):
         metod = paginator.page(paginator.num_pages)
 
     return render(request, 'metodics/search.html',
-                    {'form': form,
+                    {
                     'query':query,
-                    'page': page,
-                    'results': results})
+                    'results': metod})
