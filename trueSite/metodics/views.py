@@ -20,7 +20,7 @@ def metod(request):
 def metod_search(request):
     form = SearchForm()
     query = None
-    results = MetodPage.objects.all().order_by('title')
+    results = []
     if 'query' in request.GET:
         form = SearchForm(request.GET)
         if form.is_valid():
