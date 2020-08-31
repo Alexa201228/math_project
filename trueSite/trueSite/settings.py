@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'mathpage.apps.MathpageConfig',
     'homework.apps.HomeworkConfig',
     'metodics.apps.MetodicsConfig',
-    'literature.apps.LiteratureConfig',
     'students_works.apps.StudentsWorksConfig',
     'School.apps.SchoolConfig',
     'django.contrib.admin',
