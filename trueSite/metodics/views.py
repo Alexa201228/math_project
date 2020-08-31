@@ -29,5 +29,5 @@ def metod_search(request):
 
     return render(request, 'metodics/search.html',
                     {'form': form,
-                    'query':query,
+                    'query': query,
                     'results':results})

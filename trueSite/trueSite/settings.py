@@ -32,8 +32,6 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
-    'dal',
-    'dal_select2',
     'homepage.apps.HomepageConfig',
     'mathpage.apps.MathpageConfig',
     'homework.apps.HomeworkConfig',
