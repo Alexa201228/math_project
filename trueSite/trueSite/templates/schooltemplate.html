@@ -1,0 +1,126 @@
+<html lang="ru"><head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css">
+  
+    <!-- Plugin CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-creative/5.1.8/css/creative.css" type="text/css" rel="stylesheet">
+  
+    <!-- Theme CSS - Includes Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-creative/5.1.8/css/creative.min.css" rel="stylesheet">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176314933-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-176314933-1');
+</script>
+
+  </head>
+  <style>
+    #links{color: black;}
+    *, *::before, *::after{
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+  </style>
+  <body id="page-top" style="box-sizing: border-box;">
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="padding: 0 5vw;" id="mainNav">
+      <div class="container text-white">
+        <a class="navbar-brand js-scroll-trigger text-white" href="{% url 'Home' %}">Главная</a>
+        
+        </div>
+        
+    </nav>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
+      <div class="row" style="width: 99vw;">
+        <div class="col-3" style="padding-left: 100px; max-width: fit-content;">
+{% for t in tasks %}
+          {% ifchanged %}
+          <i><h1 class="my-4">{{ t.theme }}</h1></i>
+          {% block content %}
+            {% endblock %}
+          <div class="list-group">
+            {% for theme in themes %}
+            {% ifchanged %}
+            {% if t.theme != theme.theme %}
+            <a class="list-group-item" style="color: black;" href="{% url 'math' %}{{ theme.slug }}">
+           {{theme.theme}}
+            </a>
+            
+            {% endif %}
+            {% endifchanged %}
+           {% endfor %}
+           {% endifchanged %}
+            {% endfor %}
+          </div>
+  
+        </div>
+        
+        <div class="col-8" style="margin-left: auto; margin-right: auto;">
+          <br/>
+          <div class="container" style="margin-right: auto; margin-right: auto;">
+            {% for t in tasks %}
+          <br/>
+                  <h3>{{ t.title }}</h3> 
+                  <p></p>
+                {% if t.image %}
+                <a href="{{ t.image.url }}">
+                   <img src="{{ t.image.url }}" style="max-width: 100%; max-height: auto; margin-left: auto; margin-right: auto;">
+                </a> 
+                {% endif %}
+             {% if t.description != null %}
+             <p>{{ t.description }}</p>
+             
+             {% endif %}
+            {% if t.solution != null %}
+            <hr/>
+            <p>{{ t.solution }}</p>
+            {% endif %}
+            {% if t.image_solution %}
+            <a href="{{ t.image_solution.url }}">
+              <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 100%; max-height: auto;">
+           </a>
+           {% endif %}
+           <hr class="divider"/>
+          {% endfor %}
+          </div>
+          
+       
+      </div>
+      </div>
+    
+    <!-- Portfolio Section -->
+    
+     
+      
+
+  
+    <!-- Footer -->
+    <footer class="bg-light py-5 footer" style="display: block; box-sizing: border-box; flex-shrink: 0;">
+        <div class="small text-center text-muted">Copyright © Alexandra Gridneva {% now "Y" %}</div>
+    </footer>
+  
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  
+  
+  </body></html>
