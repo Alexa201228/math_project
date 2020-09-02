@@ -98,6 +98,13 @@
               <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 100%; max-height: auto;">
            </a>
            {% endif %}
+           {% if t.fileSolution %}
+           <p>
+             <a href="{{ t.fileSolution.url }}">
+               Скачать решение
+             </a>
+           </p>
+           {% endif %}
            <hr class="divider"/>
           {% endfor %}
           </div>

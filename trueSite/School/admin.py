@@ -7,5 +7,6 @@ class SchoolAdmin(admin.ModelAdmin):
     search_fields = ['title', 'theme']
     list_per_page = 10
     list_filter = ['theme']
+    prepopulated_fields = {'slug': ('theme', )}
 
 # Register your models here.
