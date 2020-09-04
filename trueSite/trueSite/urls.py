@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
-from mathpage.sitemaps import MathSitemap
+from homework.sitemaps import HomeworkSitemap
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 import homepage.views
 
 sitemaps = {
-    'math': MathSitemap,
+    'homework': HomeworkSitemap,
 }
 
 urlpatterns = [
