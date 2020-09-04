@@ -8,5 +8,3 @@ class HomeworkSitemap(Sitemap):
     def items(self):
         return homework.objects.all()
 
-    def lastmod(self, obj):
-        return obj.created
