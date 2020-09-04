@@ -7,7 +7,7 @@ class homework(models.Model):
     image = models.ImageField(upload_to='homework_images', blank=True, null=True)
     description = models.TextField(blank=True, null=True)
     homework_file = models.FileField(blank=True)
-    created = models.DateTimeField(auto_now_add=True
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
