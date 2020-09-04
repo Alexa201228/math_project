@@ -10,6 +10,4 @@ sitemaps = {
 urlpatterns = [
     path('', views.homeworks, name="homework"),
     path('<int:task_id>/', views.taskDetails, name='task'),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
-    name='django.contrib.sitemaps.view.sitemap'),
 ]
