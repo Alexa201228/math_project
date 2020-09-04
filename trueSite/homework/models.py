@@ -13,4 +13,4 @@ class homework(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return '/task/%i' %self.id
+        return reverse('taskDetail', args=[self.id])
