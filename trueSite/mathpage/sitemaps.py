@@ -1,5 +1,6 @@
 from django.contrib.sitemaps import Sitemap
 from .models import MathPage
+from django.core.urlresolvers import reverse
 
 class MathSitemap(Sitemap):
     changefreq = 'daily'
@@ -7,3 +8,6 @@ class MathSitemap(Sitemap):
 
     def items(self):
         return MathPage.objects.all()
+
+    def location(self, item):
+        return reverse(item)
