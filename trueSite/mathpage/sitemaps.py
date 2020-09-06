@@ -13,4 +13,4 @@ class MathSitemap(Sitemap):
         return reverse(item)
     
     def protocol(self):
-        return ""
+        return None
