@@ -11,3 +11,6 @@ class MathSitemap(Sitemap):
 
     def location(self, item):
         return reverse(item)
+    
+    def protocol(self):
+        return ""
