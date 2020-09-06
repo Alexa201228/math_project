@@ -8,6 +8,3 @@ class MathSitemap(Sitemap):
 
     def items(self):
         return ['mathpage']
-
-    def location(self, item):
-        return reverse(item)
