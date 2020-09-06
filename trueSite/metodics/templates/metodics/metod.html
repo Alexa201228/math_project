@@ -59,9 +59,12 @@
           <img src="{{ m.description.url }}">
         </p>
         {% endif %}
-        <p><a href = '{{ m.text_file.url }}'>
+        <br/>
+        <h6 style="display: flex; align-items: flex-start;"><a href = '{{ m.text_file.url }}'>
           Скачать
-        </a></p>
+        </a></h6>
+        <hr/>
+        <br/>
         {% endfor %}
         <div style="display: flex; align-items: center; justify-content: center;">
         {% include 'paginator.html' with page=metods %}
