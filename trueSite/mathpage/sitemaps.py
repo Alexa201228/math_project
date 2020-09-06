@@ -7,10 +7,7 @@ class MathSitemap(Sitemap):
     priority = 0.9
 
     def items(self):
-        return ['math']
+        return MathPage.objects.all()
 
     def location(self, item):
-        return reverse(item)
-    
-    def protocol(self):
-        return None
+        return item.slug
