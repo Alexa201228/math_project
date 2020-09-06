@@ -10,4 +10,4 @@ class MathSitemap(Sitemap):
         return ['math']
 
     def location(self, item):
-        return reverse(str(item)[9:])
+        return reverse(item)
