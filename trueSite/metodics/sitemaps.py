@@ -1,12 +1,12 @@
 from django.contrib.sitemaps import Sitemap
-from .models import MathPage
+from .models import MetodPage
 
-class MathSitemap(Sitemap):
+class MetodSitemap(Sitemap):
     changefreq = 'daily'
     priority = 0.9
 
     def items(self):
-        return MathPage.objects.all()
+        return MetodPage.objects.all()
 
     def location(self, item):
-        return '/math/' + item.slug
+        return '/metodics/' + item.title
