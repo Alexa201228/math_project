@@ -97,12 +97,13 @@
            </a>
            {% endif %}
            {% if t.fileSolution %}
-           <br/>
-           <button style="display: flex; align-items: center;">
+           <p>
+           <button style="display: flex; align-items: flex-end;">
             <a href="{{ t.fileSolution.url }}">
             Скачать решение 
            </a> 
            </button>
+           </p>
            {% endif %}
            <hr class="divider"/>
           {% endfor %}
