@@ -15,8 +15,6 @@ class MathPage(models.Model):
     def __str__(self):
         return self.title + " " + self.theme
 
-    def get_absolute_url(self):
-        return reverse('categoryTheme', args=[self.theme])
     
     def save(self):
         super(MathPage, self).save()
