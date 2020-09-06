@@ -22,9 +22,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 import homepage.views
 
-sitemaps = {
+sitemaps1 = {
     'mathpage': MathSitemap,
-    'metodics': MetodSitemap
+}
+
+sitemaps2 = {
+    'metodics': MetodSitemap,
 }
 
 urlpatterns = [
@@ -35,6 +38,8 @@ urlpatterns = [
     path('School/', include('School.urls')),
     path('metodics/', include('metodics.urls')),
     path('students/', include('students_works.urls')),
-    path(r'^sitemap-(?P<section>.+).xml$', sitemap, {'sitemaps': sitemaps},
+    path('math/sitemap.xml', sitemap, {'sitemaps': sitemaps1},
+    name='django.contrib.sitemaps.views.sitemap'),
+    path('metodics/sitemap.xml', sitemap, {'sitemaps': sitemaps2},
     name='django.contrib.sitemaps.views.sitemap'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
