@@ -10,4 +10,4 @@ class MathSitemap(Sitemap):
         return MathPage.objects.all()
 
     def location(self, item):
-        return item.slug
+        return reverse(item.slug)
