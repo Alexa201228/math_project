@@ -9,10 +9,11 @@ def math(request):
     page = request.GET.get('page')
     try:
         exercise = paginator.page(page)
-    except EmptyPage:
-        exercise = paginator.page(paginator.num_pages)
     except PageNotAnInteger:
         exercise = paginator.page(1)
+    except EmptyPage:
+        exercise = paginator.page(paginator.num_pages)
+    
     return render(request, 'math/mathematics.html', {'page': page, 'mathtasks': exercise})
 
 def categoryTheme(request, theme):
