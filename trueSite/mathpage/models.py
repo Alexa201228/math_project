@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.sitemaps import ping_google
 
 
 class MathPage(models.Model):
@@ -16,3 +17,10 @@ class MathPage(models.Model):
 
     def get_absolute_url(self):
         return reverse('categoryTheme', args=[self.theme])
+    
+    def save(self):
+        super(MathPage, self).save()
+        try:
+            ping_google()
+        except Exception:
+            pass
