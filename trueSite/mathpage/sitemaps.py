@@ -7,7 +7,4 @@ class MathSitemap(Sitemap):
     priority = 0.9
 
     def items(self):
-        return ['trueSite:math']
-
-    def location(self, item):
-        return reverse(item)
+        return ['math']
