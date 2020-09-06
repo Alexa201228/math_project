@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 import homepage.views
 
 sitemaps = {
-    'm': MathSitemap,
+    'mathpage': MathSitemap,
 }
 
 urlpatterns = [
@@ -33,6 +33,6 @@ urlpatterns = [
     path('School/', include('School.urls')),
     path('metodics/', include('metodics.urls')),
     path('students/', include('students_works.urls')),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+    path('math/sitemap.xml', sitemap, {'sitemaps': sitemaps},
     name='django.contrib.sitemaps.views.sitemap'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
