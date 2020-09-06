@@ -35,8 +35,6 @@ urlpatterns = [
     path('School/', include('School.urls')),
     path('metodics/', include('metodics.urls')),
     path('students/', include('students_works.urls')),
-    path('math/sitemap.xml', sitemap, {'sitemaps': sitemaps},
-    name='django.contrib.sitemaps.views.sitemap'),
-    path('metodics/sitemap.xml', sitemap, {'sitemaps': sitemaps},
+    path(r'^sitemap-(?P<section>.+).xml$', sitemap, {'sitemaps': sitemaps},
     name='django.contrib.sitemaps.views.sitemap'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
