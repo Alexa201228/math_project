@@ -85,13 +85,12 @@
                 </a> 
                 {% endif %}
              {% if t.description != null %}
-             <p>{{ t.description }}</p>
-             
+             <br/>
+             <br/>
+             <p><b>{{ t.description }}</b></p>
+             <br/>
+             <br/>
              {% endif %}
-            {% if t.solution != null %}
-            <hr/>
-            <p>{{ t.solution }}</p>
-            {% endif %}
             {% if t.image_solution %}
             <a href="{{ t.image_solution.url }}">
               <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 100%; max-height: auto;">
@@ -102,7 +101,7 @@
             <br/>
             <button>
               <a href="{{ t.fileSolution.url }}">
-            Скачать решение 
+            Скачать 
            </a> 
             </button>
             
