@@ -61,7 +61,7 @@
             {% for theme in themes %}
             {% ifchanged %}
             {% if t.theme != theme.theme %}
-            <a class="list-group-item" style="color: black;" href="{% url 'math' %}{{ theme.slug }}">
+            <a class="list-group-item" style="color: black;" href="{% url 'schoolMath' %}{{ theme.slug }}">
            {{theme.theme}}
             </a>
             
