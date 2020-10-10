@@ -80,8 +80,8 @@
                   <h3>{{ t.title }}</h3> 
                   <p></p>
                 {% if t.image %}
-                <a href="{{ t.image.url }}" target="_blank">
-                   <img src="{{ t.image.url }}" style="max-width: 60vw; max-height: 60vh;">
+                <a href="{{ t.image.url }}" target="_blank" style="display: flex; align-items: center;">
+                   <img src="{{ t.image.url }}" style="max-width: 60vw; max-height: 60vh; margin-left: auto; margin-right: auto;">
                 </a> 
                 {% endif %}
              {% if t.description != null %}
@@ -92,8 +92,8 @@
              <br/>
              {% endif %}
             {% if t.image_solution %}
-            <a href="{{ t.image_solution.url }}" target="_blank">
-              <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 60vw; max-height: 60vh;">
+            <a href="{{ t.image_solution.url }}" target="_blank" style="display: flex; align-items: center;">
+              <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 60vw; max-height: 60vh; margin-left: auto; margin-right: auto;">
            </a>
            {% endif %}
            {% if t.fileSolution %}
