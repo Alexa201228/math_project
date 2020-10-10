@@ -81,7 +81,7 @@
                   <p></p>
                 {% if t.image %}
                 <a href="{{ t.image.url }}" target="_blank">
-                   <img src="{{ t.image.url }}" style="max-width: 100%; max-height: auto; margin-left: auto; margin-right: auto;">
+                   <img src="{{ t.image.url }}" style="max-width: 70vw; max-height: 60vh;">
                 </a> 
                 {% endif %}
              {% if t.description != null %}
@@ -93,7 +93,7 @@
              {% endif %}
             {% if t.image_solution %}
             <a href="{{ t.image_solution.url }}" target="_blank">
-              <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 70vh; max-height: 60vw;">
+              <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 70vw; max-height: 60vh;">
            </a>
            {% endif %}
            {% if t.fileSolution %}
