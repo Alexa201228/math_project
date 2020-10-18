@@ -83,28 +83,25 @@
                   <h3>{{ t.title }}</h3> 
                   <p></p>
                 {% if t.image %}
-                <a href="{{ t.image.url }}">
+                <a href="{{ t.image.url }}" target="_blank">
                    <img src="{{ t.image.url }}" style="max-width: 100%; max-height: auto; margin-left: auto; margin-right: auto;">
                 </a> 
                 {% endif %}
              {% if t.description != null %}
-             <p>{{ t.description }}</p>
-             
+             <br/>
+             <p><b>{{ t.description }}</b></p>
+             <br/>
              {% endif %}
-            {% if t.solution != null %}
-            <hr/>
-            <p>{{ t.solution }}</p>
-            {% endif %}
             {% if t.image_solution %}
-            <a href="{{ t.image_solution.url }}">
+            <a href="{{ t.image_solution.url }}" target="_blank">
               <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 100%; max-height: auto;">
            </a>
            {% endif %}
            {% if t.fileSolution %}
            
-           <p  style="align-items: center;">
+           <p  style="padding-top: 5vh; padding-bottom: 5vh; display: flex; align-items: center;">
             <br/>
-           <button>
+           <button style="margin-left: auto; margin-right: auto;">
              <a href="{{ t.fileSolution.url }}">
                Скачать решение
              </a>

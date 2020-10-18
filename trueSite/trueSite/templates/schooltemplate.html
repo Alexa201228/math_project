@@ -61,7 +61,7 @@
             {% for theme in themes %}
             {% ifchanged %}
             {% if t.theme != theme.theme %}
-            <a class="list-group-item" style="color: black;" href="{% url 'math' %}{{ theme.slug }}">
+            <a class="list-group-item" style="color: black;" href="{% url 'schoolMath' %}{{ theme.slug }}">
            {{theme.theme}}
             </a>
             
@@ -82,30 +82,29 @@
                   <h3>{{ t.title }}</h3> 
                   <p></p>
                 {% if t.image %}
-                <a href="{{ t.image.url }}">
-                   <img src="{{ t.image.url }}" style="max-width: 100%; max-height: auto; margin-left: auto; margin-right: auto;">
+                <a href="{{ t.image.url }}" target="_blank" style="display: flex; align-items: center;">
+                   <img src="{{ t.image.url }}" style="max-width: 60vw; max-height: 60vh; margin-left: auto; margin-right: auto;">
                 </a> 
                 {% endif %}
              {% if t.description != null %}
-             <p>{{ t.description }}</p>
-             
+             <br/>
+             <br/>
+             <p><b>{{ t.description }}</b></p>
+             <br/>
+             <br/>
              {% endif %}
-            {% if t.solution != null %}
-            <hr/>
-            <p>{{ t.solution }}</p>
-            {% endif %}
             {% if t.image_solution %}
-            <a href="{{ t.image_solution.url }}">
-              <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 100%; max-height: auto;">
+            <a href="{{ t.image_solution.url }}" target="_blank" style="display: flex; align-items: center;">
+              <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 60vw; max-height: 60vh; margin-left: auto; margin-right: auto;">
            </a>
            {% endif %}
            {% if t.fileSolution %}
            
-           <p style="justify-content: center;">
+           <p style="padding-top: 5vh; padding-bottom: 5vh; display: flex; align-items: center;">
             <br/>
-            <button>
+            <button style="margin-left: auto; margin-right: auto;">
               <a href="{{ t.fileSolution.url }}">
-               Скачать решение
+               Скачать
              </a>
             </button>
            </p>
