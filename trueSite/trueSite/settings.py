@@ -32,6 +32,7 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
+    'embed_video',
     'homepage.apps.HomepageConfig',
     'mathpage.apps.MathpageConfig',
     'homework.apps.HomeworkConfig',

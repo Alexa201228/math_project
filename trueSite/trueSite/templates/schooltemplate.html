@@ -1,3 +1,4 @@
+{% load embed_video_tags %}
 <html lang="ru"><head>
 
     <meta charset="utf-8">
@@ -108,6 +109,9 @@
              </a>
             </button>
            </p>
+           {% endif %}
+           {% if t.video_source != null %}
+           {% video t.video_source "small" %}
            {% endif %}
            <hr class="divider"/>
           {% endfor %}
