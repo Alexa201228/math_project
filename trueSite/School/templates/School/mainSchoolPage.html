@@ -109,7 +109,10 @@
            </p>
            {% endif %}
            {% if t.video_source != null %}
-           {% video t.video_source "small" %}
+            <p style="padding-top: 5vh; padding-bottom: 5vh; display: flex; align-items: center;">
+              {% video t.video_source "small" %}
+            </p>
+           <br/>
            {% endif %}
            <hr class="divider"/>
           {% endfor %}
