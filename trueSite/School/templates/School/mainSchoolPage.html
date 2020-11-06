@@ -1,4 +1,4 @@
-{% load embed_video_tags %}
+
 <html lang="ru"><head>
 
     <meta charset="utf-8">
@@ -109,8 +109,9 @@
            </p>
            {% endif %}
            {% if t.video_source != null %}
+           {% load embed_video_tags %}
             <p style="padding-top: 2vh; padding-bottom: 5vh; display: flex; align-items: center;">
-              <div style="align-self: center;">
+              <div style="display: flex; align-items: center;">
                 {% video t.video_source "small" %}
               </div>
             </p>
