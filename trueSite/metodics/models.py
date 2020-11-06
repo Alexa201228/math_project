@@ -7,6 +7,7 @@ class MetodPage(models.Model):
     text_file = models.FileField(upload_to='metod/')
     objects = models.Manager()
     description = models.ImageField(blank=True, null=True, upload_to='metod_images/')
+    video_source = models.URLField(blank=True, null=True)
 
 
     def __str__(self):

@@ -65,6 +65,15 @@
         </a></button>
         <hr/>
         <br/>
+        {% if m.video_source != null %}
+           {% load embed_video_tags %}
+            <p style="padding-top: 2vh; padding-bottom: 5vh; display: flex; align-items: center;">
+              <div style="text-align: center;">
+                {% video m.video_source "small" %}
+              </div>
+            </p>
+           <br/>
+           {% endif %}
         {% endfor %}
         <div style="display: flex; align-items: center; justify-content: center;">
         {% include 'paginator.html' with page=metods %}
