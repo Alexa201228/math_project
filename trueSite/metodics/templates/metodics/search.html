@@ -65,6 +65,15 @@
         <p>
           <a href="{{ post.text_file.url }}">Скачать</a>  
         </p>  
+        {% if post.video_source != null %}
+           {% load embed_video_tags %}
+            <p style="padding-top: 2vh; padding-bottom: 5vh; display: flex; align-items: center;">
+              <div style="text-align: center;">
+                {% video post.video_source "small" %}
+              </div>
+            </p>
+           <br/>
+           {% endif %}
     {% empty %}
     <p>Результатов не найдено.</p>    
     {% endfor %}
