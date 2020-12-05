@@ -11,6 +11,8 @@ class MathPage(models.Model):
     fileSolution = models.FileField(blank=True, upload_to='math_materials/')
     slug = models.SlugField(max_length=250, default='')
     image_solution = models.ImageField(upload_to='math_images/', blank=True, null=True)
+    video_source = models.URLField(blank=True, null=True)
+
 
     def __str__(self):
         return self.title + " " + self.theme
