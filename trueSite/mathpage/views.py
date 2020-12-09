@@ -19,7 +19,7 @@ def math(request):
 
 def categoryTheme(request, theme):
     math_theme = MathPage.objects.filter(slug=theme)
-    all_themes = MathPage.objects.all()
+    all_themes = MathPage.objects.all().distinct('theme')
     paginator = Paginator(math_theme, 10)
     page = request.GET.get('page')
     try:
