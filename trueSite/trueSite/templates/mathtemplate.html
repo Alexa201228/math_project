@@ -56,9 +56,9 @@
 {% for t in math_tasks %}
           {% ifchanged %}
           <i><h1 class="my-4">{{ t.theme }}</h1></i>
-          {% endifchanged %}
           {% block content %}
             {% endblock %}
+            {% endifchanged %}
           <div class="list-group">
             {% for theme in themes %}
             
