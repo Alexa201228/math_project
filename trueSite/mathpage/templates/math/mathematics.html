@@ -59,7 +59,7 @@
           <div class="list-group" >
             {% regroup mathtasks by theme as math_themes %}
                {% for t in math_themes %}
-               {{ t.grouper }}
+               
                {% for task in t.list %}
                <a class="list-group-item" style="color: black;" href="{{ task.slug }}">
               {{ task.theme }}
