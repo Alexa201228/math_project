@@ -60,7 +60,7 @@
             {% endblock %}
             
           <div class="list-group">
-            {% for theme in set(themes) %}
+            {% for theme in themes %}
             
             {% if t.theme != theme.theme %}
             <a class="list-group-item" style="color: black;" href="{% url 'math' %}{{ theme.slug }}">
@@ -68,9 +68,9 @@
             </a>
             
             {% endif %}
-           {% endifchanged %}
-           {% endfor %}
            
+           {% endfor %}
+           {% endifchanged %}
             {% endfor %}
           </div>
   
