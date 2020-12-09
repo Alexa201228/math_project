@@ -27,5 +27,5 @@ def categoryTheme(request, theme):
         math_thema = paginator.page(1)
     except EmptyPage:
         math_thema = paginator.page(paginator.num_pages)
-    return render(request, 'math/categories.html', {'page': page, 'math_tasks': math_thema, 'themes': all_themes})
+    return render(request, 'math/categories.html', {'page': page, 'math_tasks': math_thema, 'themes': set(all_themes)})
     
