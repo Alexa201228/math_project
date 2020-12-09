@@ -57,7 +57,7 @@
 
           <i><h1 class="my-4">Темы</h1></i>
           <div class="list-group" >
-            {% regroup mathtasks by theme as math_themes}
+            {% regroup mathtasks by theme as math_themes %}
                {% for t in math_themes %}
                
                <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
