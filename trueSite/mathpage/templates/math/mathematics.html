@@ -59,11 +59,11 @@
           <div class="list-group" >
             
                {% for t in mathtasks %}
-               {% ifchanged %}
+               
                <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
               {{ t.theme }}
               </a>
-              {% endifchanged %}
+              
               {% endfor %}
             
             

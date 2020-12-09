@@ -14,7 +14,7 @@ def math(request):
     except EmptyPage:
         exercise = paginator.page(paginator.num_pages)
     
-    return render(request, 'math/mathematics.html', {'page': page, 'mathtasks': set(exercise)})
+    return render(request, 'math/mathematics.html', {'page': page, 'mathtasks': list(set(exercise))})
 
 def categoryTheme(request, theme):
     math_theme = MathPage.objects.filter(slug=theme)
