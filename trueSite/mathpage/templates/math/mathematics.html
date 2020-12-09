@@ -96,6 +96,17 @@
               <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 100%; max-height: auto;">
            </a>
            {% endif %}
+           <br/>
+           <hr/>
+           {% if t.video_source != null %}
+           {% load embed_video_tags %}
+            <p style="padding-top: 2vh; padding-bottom: 5vh; display: flex; align-items: center;">
+              <div style="text-align: center;">
+                {% video t.video_source "small" %}
+              </div>
+            </p>
+           <br/>
+           {% endif %}
            {% if t.fileSolution %}
            
            <p style="padding-top: 5vh; padding-bottom: 5vh; display: flex; align-items: center;">

@@ -46,7 +46,7 @@
 
     <section class="page-section bg-white" id="portfolio">
         <br/>
-        <div class="container" style="max-width: 100%; text-align: center;">
+        <div class="container" style="max-width: 90vh; text-align: center;">
     {% block content %}  
     {% if query %}    
     <h1>Материалы с ключевым словом "{{ query }}"</h1> 
@@ -59,12 +59,15 @@
     </h3>
     {% if post.description %} 
     <p>
-      <img src="{{ post.description.url }}">
+      <img src="{{ post.description.url }}" style="width: 45vh; height: 40vh;">
     </p>
     {% endif %}
-        <p>
-          <a href="{{ post.text_file.url }}">Скачать</a>  
-        </p>  
+    <br/>
+    <button style="align-items: center;"><a href = '{{ post.text_file.url }}'>
+      Скачать
+    </a></button> 
+    <hr/>
+        <br/>
         {% if post.video_source != null %}
            {% load embed_video_tags %}
             <p style="padding-top: 2vh; padding-bottom: 5vh; display: flex; align-items: center;">

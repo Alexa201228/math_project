@@ -50,11 +50,15 @@
              <h3>{{ work.title }}</h3>
              <br/>
              <br/>
+             {% if work.source %}
              <iframe src="{{ work.source }}"  width="640" height="480"></iframe>
              <br/>
+             {% endif %}
              {% if work.presentation %}
          <p> <a href="{{ work.presentation.url }}">
-         <p>Скачать файл</p> 
+         <p>
+           <button>Скачать файл</button> 
+         </p>
         </a></p>    
         <br/>
         {% else %}

@@ -49,14 +49,14 @@
     <!-- Portfolio Section -->
     <section class="page-section bg-white" id="portfolio">
         <br/>
-        <div class="container" style="max-width: 100%; text-align: center;">
+        <div class="container" style="max-width: 90vh; text-align: center;">
          {% block content %}
 
         {% for m in metods %}
         <h3 style="color: black;">{{ m.title }}</h3>
         {% if m.description %}
         <p>
-          <img src="{{ m.description.url }}">
+          <img src="{{ m.description.url }}" style="width: 45vh; height: 40vh;">
         </p>
         {% endif %}
         <br/>
