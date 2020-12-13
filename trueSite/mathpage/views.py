@@ -5,6 +5,7 @@ from .models import MathPage
 
 def math(request):
     mathtasks = MathPage.objects.all()
+    mathThemes = MathPage.objects.all().distinct('theme')
     paginator = Paginator(mathtasks, 10)
     page = request.GET.get('page')
     try:
@@ -14,11 +15,11 @@ def math(request):
     except EmptyPage:
         exercise = paginator.page(paginator.num_pages)
     
-    return render(request, 'math/mathematics.html', {'page': page, 'mathtasks': exercise})
+    return render(request, 'math/mathematics.html', {'page': page, 'mathtasks': exercise, 'math_themes': mathThemes })
 
 def categoryTheme(request, theme):
     math_theme = MathPage.objects.filter(slug=theme)
-    all_themes = MathPage.objects.all()
+    all_themes = MathPage.objects.all().distinct('theme')
     paginator = Paginator(math_theme, 10)
     page = request.GET.get('page')
     try:
