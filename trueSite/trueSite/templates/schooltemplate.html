@@ -60,14 +60,11 @@
             {% endblock %}
           <div class="list-group">
             {% for theme in themes %}
-            {% ifchanged %}
             {% if t.theme != theme.theme %}
             <a class="list-group-item" style="color: black;" href="{% url 'schoolMath' %}{{ theme.slug }}">
            {{theme.theme}}
             </a>
-            
             {% endif %}
-            {% endifchanged %}
            {% endfor %}
            {% endifchanged %}
             {% endfor %}

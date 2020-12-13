@@ -4,6 +4,7 @@ from .models import SchoolPage
 
 def schoolMath(request):
     tasks = SchoolPage.objects.all().order_by('title')
+    themes = SchoolPage.objects.all().distinct('theme')
     paginator = Paginator(tasks, 10)
     page = request.GET.get('page')
     try:
@@ -12,7 +13,7 @@ def schoolMath(request):
         task = paginator.page(1)
     except EmptyPage:
         task = paginator.page(paginator.num_pages)
-    return render(request, 'School/mainSchoolPage.html', {'page': page, 'tasks': task})
+    return render(request, 'School/mainSchoolPage.html', {'page': page, 'tasks': task, 'themes': themes})
 
 def category(request, theme):
     math_theme = SchoolPage.objects.filter(slug=theme)
