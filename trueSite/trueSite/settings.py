@@ -33,7 +33,6 @@ SITE_ID = 1
 
 INSTALLED_APPS = [
     'embed_video',
-    'blog.apps.BlogConfig',
     'homepage.apps.HomepageConfig',
     'mathpage.apps.MathpageConfig',
     'homework.apps.HomeworkConfig',
@@ -51,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     'taggit',
     'django_cleanup',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
