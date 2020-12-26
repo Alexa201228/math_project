@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.urls import reverse
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
-from myblog.settings import ALLOWED_HOSTS
+from trueSite.settings import ALLOWED_HOSTS
 
 class PublishedManager(models.Manager):
     def get_queryset(self):
