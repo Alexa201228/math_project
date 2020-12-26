@@ -6,7 +6,7 @@ class PostImageAdmin(admin.StackedInline):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'author', 'publish', 'status')
+    list_display = ('title', 'slug', 'publish', 'status')
     prepopulated_fields = {'slug': ('title', )}
     inlines = [PostImageAdmin]
     list_per_page = 10
