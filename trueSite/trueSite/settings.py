@@ -33,6 +33,7 @@ SITE_ID = 1
 
 INSTALLED_APPS = [
     'embed_video',
+    'blog.apps.BlogConfig',
     'homepage.apps.HomepageConfig',
     'mathpage.apps.MathpageConfig',
     'homework.apps.HomeworkConfig',

@@ -1,0 +1,35 @@
+{% extends "blog/base.html" %}
+{% block title %}Блог{% endblock %}
+{% block content %}
+<h1>
+    Собрание мыслей (блог)
+</h1>
+{% if tag %}
+<h2>Посты с меткой "{{ tag.name }}"</h2>
+{% endif %}
+{% include "blog/post/list_ajax.html" %}
+{% endblock %}
+{% block domready %}  
+var page = 1;  
+var empty_page = false;  
+var block_request = false;  
+$(window).scroll(function() 
+{    
+    var margin = $(document).height() - $(window).height() - 200;    
+    if($(window).scrollTop() > margin && empty_page == false &&  block_request == false) 
+    {     
+        block_request = true;      
+        page += 1;     
+        $.get('?page=' + page, 
+        function(data) {        
+            if(data == '') {          
+                empty_page = true;        
+            }        
+            else {          
+                block_request = false;          
+                $('#content').append(data);        
+            }      
+        });    
+    }  
+});
+{% endblock %}

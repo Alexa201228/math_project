@@ -1,0 +1,346 @@
+body { 
+    margin:0;
+    padding: 7.5vh 0 0 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+
+button{
+  display: none;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+
+  flex: 30%;
+  padding: 0 20px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+
+
+a.recently-added:hover{
+  color: #1da851;
+}
+a.main:hover{
+  color: #2d4373;
+}
+a.nav:hover{
+  color: black;
+  background-color: rgba(99, 101, 211, 0.719);
+  border-radius: 10px;
+}
+.grid-container{
+  grid-template-columns: 62% 34%;
+  display: grid;
+  column-gap: 7vw;
+}
+
+li {
+  list-style-type: none;
+
+}
+
+h1 { 
+    font-weight:normal;
+    border-bottom:1px solid #bbb;
+    padding:0 0 10px 0;
+    font-family: zillaslab,palatino,"Palatino Linotype",serif;
+}
+
+h2 {
+    font-weight:normal;
+    margin:30px 0 0;
+}
+
+#content {
+    float: left; 
+    padding: 30px;
+}
+img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+#sidebar {     
+    position: sticky; /* Fixed Sidebar (stay in place on scroll) */
+    top: 0;
+    float: right;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding: 1em;
+    height: fit-content;
+    background:#efefef;
+    border-radius: 5px; 
+}
+
+.tags{
+  font-family: Raleway,sans-serif;
+  font-size: medium;
+  font-weight: bold;
+}
+
+p{
+  font-family: "Sailec-Regular",system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;;
+}
+p.similar{
+  font-weight: bolder;
+  font-style: italic;
+}
+p.date { 
+    color:rgb(24, 4, 2);
+    font-family: georgia, serif;
+    font-size: 14px;
+    font-style: italic; 
+}
+hr.separator{
+  border-top: 1px solid #666;
+  border-radius: 5px;
+}
+hr.separator-similar{
+  border-top: 5px solid #666;
+  border-radius: 5px;
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+
+.sharing-button__link,
+.sharing-button__icon {
+  display: inline-block
+}
+
+.sharing-button__link {
+  text-decoration: none;
+  color: #fff;
+  margin: 0.5em
+}
+
+.sharing-button {
+  border-radius: 5px;
+  transition: 25ms ease-out;
+  padding: 0.5em 0.75em;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+}
+
+.sharing-button__icon img {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: top
+}
+
+.sharing-button--small img {
+  margin: 0;
+  vertical-align: middle
+}
+
+/* Non solid icons get a stroke */
+.sharing-button__icon {
+  stroke: #fff;
+  fill: none
+}
+
+/* Solid icons get a fill */
+.sharing-button__icon--solid,
+.sharing-button__icon--solidcircle {
+  fill: #fff;
+  stroke: none
+}
+
+.sharing-button--twitter {
+  background-color: #55acee
+}
+
+.sharing-button--twitter:hover {
+  background-color: #2795e9
+}
+
+.sharing-button--pinterest {
+  background-color: #bd081c
+}
+
+.sharing-button--pinterest:hover {
+  background-color: #8c0615
+}
+
+.sharing-button--facebook {
+  background-color: #3b5998
+}
+
+.sharing-button--facebook:hover {
+  background-color: #2d4373
+}
+
+.sharing-button--tumblr {
+  background-color: #35465C
+}
+
+.sharing-button--tumblr:hover {
+  background-color: #222d3c
+}
+
+.sharing-button--reddit {
+  background-color: #5f99cf
+}
+
+.sharing-button--reddit:hover {
+  background-color: #3a80c1
+}
+
+.sharing-button--google {
+  background-color: #dd4b39
+}
+
+.sharing-button--google:hover {
+  background-color: #c23321
+}
+
+.sharing-button--linkedin {
+  background-color: #0077b5
+}
+
+.sharing-button--linkedin:hover {
+  background-color: #046293
+}
+
+
+.sharing-button--xing {
+  background-color: #1a7576
+}
+
+.sharing-button--xing:hover {
+  background-color: #114c4c
+}
+
+.sharing-button--whatsapp {
+  background-color: #25D366
+}
+
+.sharing-button--whatsapp:hover {
+  background-color: #1da851
+}
+
+.sharing-button--hackernews {
+background-color: #FF6600
+}
+.sharing-button--hackernews:hover, .sharing-button--hackernews:focus {   background-color: #FB6200 }
+
+.sharing-button--vk {
+  background-color: #507299
+}
+
+.sharing-button--vk:hover {
+  background-color: #43648c
+}
+
+.sharing-button--telegram {
+  background-color: #54A9EB;
+}
+
+.sharing-button--telegram:hover {
+  background-color: #4B97D1;}
+
+
+  @media (min-width: 48em) {
+    .grid-container {
+    padding: 0 15px;
+  }
+}
+  
+  
+  @media (min-width: 575.98px){
+    .grid-container {
+      max-width: 540px;
+      margin: auto;
+      padding: 0;
+    }
+  }
+  
+  @media (min-width: 767.98px){
+    .grid-container {
+      max-width: 720px;	
+    }
+  }
+  
+  @media (min-width: 991.98px) {
+    .grid-container {
+      max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1199.98px){
+    .grid-container {
+      max-width: 1140px;
+    }
+  }
+  @media only screen and (max-width:650px){
+    .grid-container{
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+    }
+    #sidebar{
+      order: 1;
+    }
+    #content{
+      order: 2;
+    }
+  }
+  /* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 75%;
+    max-width: 100%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,40 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% load blog_tags %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<script src="{% static 'js/blogscript.js' %}">
+</script>
+
+<h1>{{ post.title }}</h1>
+<p class="tags">
+  Tags: 
+  {% for tag in post.tags.all %}
+  <a href="{% url 'blog:post_list_by_tag' tag.slug %}">
+      {{ tag.name }}
+  </a>
+  {% if not forloop.last %}, {% endif %}
+  {% endfor %}
+</p>
+<div id="content-pictures">
+  <p class="date">
+    Published {{ post.publish }}
+</p>
+<script>
+  var text = "{{ post.body|linebreaks|remove_tags }} {{ images }}";
+  textWithPictures(text);
+</script>
+</div>
+{% social_sharing post.get_full_url post.title %}
+<hr class="separator-similar">
+<h2>Похожие публикации</h2>
+{% for post in similar_posts %}
+  <p class="similar">
+    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+  </p>
+  {% empty %}
+  Нет похожих публикаций 
+{% endfor %}
+
+{% endblock %}

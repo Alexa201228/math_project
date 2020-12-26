@@ -1,0 +1,15 @@
+<ul>
+    {% for link in social_share %}
+    <a class="sharing-button__link" href="{{ link.share_source }}" 
+        onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=500');
+        return false;"
+        target="_blank" rel="nofollow">
+        <div class="sharing-button sharing-button--{{ link.link_name }} sharing-button--medium">
+            <div aria-hidden="true" class="sharing-button__icon sharing-button__icon--solid">
+            {% if link.icon %}
+                <img src="{{ link.icon.url }}">
+            {% endif %}
+                </div>Поделиться в {{ link.name_cap  }}</div>
+        </a>
+    {% endfor %}
+</ul>
