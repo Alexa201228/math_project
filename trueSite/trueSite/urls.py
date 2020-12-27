@@ -18,6 +18,7 @@ from django.contrib.sitemaps.views import sitemap
 from mathpage.sitemaps import MathSitemap
 from metodics.sitemaps import MetodSitemap
 from School.sitemaps import SchoolSitemap
+from blog.sitemaps import PostSitemap
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
@@ -35,6 +36,10 @@ sitemaps3 = {
     'School': SchoolSitemap,
 }
 
+sitemaps4 = {
+    'blog': PostSitemap,
+}
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage.views.Home, name='Home'),
@@ -49,5 +54,7 @@ urlpatterns = [
     path('metodics/sitemap.xml', sitemap, {'sitemaps': sitemaps2},
     name='django.contrib.sitemaps.views.sitemap'),
     path('School/sitemap.xml', sitemap, {'sitemaps': sitemaps3},
+    name='django.contrib.sitemaps.views.sitemap'),
+    path('blog/sitemap.xml', sitemap, {'sitemaps': sitemaps4},
     name='django.contrib.sitemaps.views.sitemap'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
