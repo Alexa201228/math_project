@@ -4,13 +4,6 @@ import re
 
 register = template.Library()
 
-@register.filter
-def remove_tags(value):
-    cleanr = re.compile('<\/*p+>')
-    cleantext = re.sub(cleanr, '', value)
-    cleanr = re.compile('<\/*br+>')
-    cleantext = re.sub(cleanr, '{%nl}', cleantext)
-    return cleantext
 
 @register.inclusion_tag('blog/post/latest_posts.html')
 def show_latest_posts(count=5):

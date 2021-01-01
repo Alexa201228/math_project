@@ -4,28 +4,29 @@ function textWithPictures(text){
     var textBody = text.slice(0, pathesStart);
     var pathesArr = imagesPathes.split(',');
     pathesArr.pop();
-    var enterIndex = 0;
+    var imageIndex = 0;
     while(textBody.length > 1){
-        enterIndex = textBody.indexOf('{%nl}');
-        if(enterIndex == -1){
-            var noBreaks = document.createElement("p");
-            noBreaks.innerHTML = textBody;
-            document.getElementById("content-pictures").appendChild(noBreaks);
-            for(var i = 0; i < pathesArr.length; i++){
-                var tempImg = document.createElement("img");
-                tempImg.src = pathesArr[i];
-                document.getElementById("content-pictures").appendChild(tempImg);
+        imageIndex = textBody.indexOf('?img?');
+        if(imageIndex == -1){
+            var splitedText = textBody.split('<br>');
+            for(var i = 1; i < splitedText.length; i++){
+                var tempParagraph = document.createElement('p');
+                tempParagraph.innerHTML = splitedText[i];
+                document.getElementById("content-pictures").appendChild(tempParagraph);
+                var tempSep = document.createElement('hr');
+                tempSep.className = 'separator';
+                document.getElementById("content-pictures").appendChild(tempSep);
             }
             break;
         }
         else{
-         var newPar = document.createElement("p");
-        newPar.innerHTML = textBody.slice(0, enterIndex);
+        var newPar = document.createElement("p");
+        newPar.innerHTML = textBody.slice(0, imageIndex);
            
         }
-        enterIndex = enterIndex + 5;
-        if(enterIndex < textBody.length - 1){
-            textBody = textBody.slice(enterIndex);
+        imageIndex = imageIndex + 5;
+        if(imageIndex < textBody.length - 1){
+            textBody = textBody.slice(imageIndex);
         }
         else{
             break;
@@ -38,11 +39,6 @@ function textWithPictures(text){
             img.src = pathesArr.shift();
             imgPar.appendChild(img);
             document.getElementById("content-pictures").appendChild(imgPar);
-        }
-        else{
-            var separator = document.createElement("hr");
-            separator.className = "separator";
-            document.getElementById("content-pictures").appendChild(separator);
         }
     }
 

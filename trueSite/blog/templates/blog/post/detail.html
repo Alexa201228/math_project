@@ -22,7 +22,7 @@
     Published {{ post.publish }}
 </p>
 <script>
-  var text = "{{ post.body|linebreaks|remove_tags }} {{ images }}";
+  var text = "{{ post.body|linebreaks }} {{ images }}";
   textWithPictures(text);
 </script>
 </div>
