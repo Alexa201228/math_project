@@ -1,4 +1,5 @@
-<html lang="ru"><head>
+<html lang="ru">
+  <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,7 +61,7 @@
             {% endblock %}
             
           <div class="list-group">
-            {% for theme in themes %}
+            {% for theme in math_themes %}
             
             {% if t.theme != theme.theme %}
             <a class="list-group-item" style="color: black;" href="{% url 'math' %}{{ theme.slug }}">
