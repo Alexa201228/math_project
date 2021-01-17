@@ -9,7 +9,7 @@ def schoolMath(request, theme=None):
     paginator = Paginator(tasks, 10)
     page = request.GET.get('page')
     if theme:
-        category = SchoolPage.objects.filter(slug=theme)
+        category = SchoolPage.objects.filter(slug=theme)[0]
         tasks = tasks.filter(slug=theme)
         paginator = Paginator(tasks, 10)
         page = request.GET.get('page')
@@ -21,17 +21,3 @@ def schoolMath(request, theme=None):
         task = paginator.page(paginator.num_pages)
     return render(request, 'School/category.html', {'page': page, 'tasks': task, 'themes': themes, 'category': category})
 
-# def category(request, theme):
-#     math_theme = SchoolPage.objects.filter(slug=theme)
-#     all_themes = SchoolPage.objects.all()
-#     paginator = Paginator(math_theme, 10)
-#     page = request.GET.get('page')
-#     try:
-#         math_thema = paginator.page(page)
-#     except PageNotAnInteger:
-#         math_thema = paginator.page(1)
-#     except EmptyPage:
-#         math_thema = paginator.page(paginator.num_pages)
-#     return render(request, 'School/category.html', {'page': page, 'tasks': math_thema, 'themes': all_themes})
-
-# Create your views here.
