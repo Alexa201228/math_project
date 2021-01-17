@@ -115,7 +115,9 @@
            <hr class="divider"/>
           {% endfor %}
           <div style="display: flex; align-items: center; justify-content: center;">
-            {% include 'paginator.html' with page=tasks %}
+            <p>
+              {% include 'paginator.html' with page=tasks %}
+            </p>
             </div>
           </div>
           
