@@ -11,8 +11,8 @@ def math(request, theme_slug=None):
     page = request.GET.get('page')
     if theme_slug:
         category = MathPage.objects.filter(slug=theme_slug)[0]
-        mathtasks = MathPage.objects.filter(slug=theme_slug)
-        paginator = Paginator(category, 10)
+        mathtasks = mathtasks.filter(slug=theme_slug)
+        paginator = Paginator(mathtasks, 10)
         page = request.GET.get('page')
     try:
         exercise = paginator.page(page)
