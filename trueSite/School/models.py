@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.sitemaps import ping_google
 
 
 class SchoolPage(models.Model):
@@ -17,5 +18,11 @@ class SchoolPage(models.Model):
 
     def get_absolute_url(self):
         return reverse('category', args=[self.theme, self.slug])
-
+    
+    def save(self):
+        super(SchoolPage, self).save()
+        try:
+            ping_google()
+        except Exception:
+            pass
 # Create your models here.

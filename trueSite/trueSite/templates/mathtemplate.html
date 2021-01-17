@@ -54,25 +54,13 @@
     
       <div class="row" style="width: 99vw;">
         <div class="col-3" style="padding-left: 100px; max-width: fit-content;">
-{% for t in math_tasks %}
-          {% ifchanged %}
-          <i><h1 class="my-4">{{ t.theme }}</h1></i>
-          {% block content %}
-            {% endblock %}
-            
-          <div class="list-group">
-            {% for theme in math_themes %}
-            
-            {% if t.theme != theme.theme %}
-            <a class="list-group-item" style="color: black;" href="{% url 'math' %}{{ theme.slug }}">
-           {{theme.theme}}
-            </a>
-            
-            {% endif %}
-           
-           {% endfor %}
-           {% endifchanged %}
-            {% endfor %}
+          <i>{% if category %}{{ category.slug }}{% else %}Темы{% endif %}</i>
+          <a class="list-group-item" style="color: black;" href="{% url 'math' %}">Все темы</a>
+          {% for t in math_themes %}               
+          <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
+         {{ t.theme }}
+         </a>
+       {% endfor %}
           </div>
   
         </div>
