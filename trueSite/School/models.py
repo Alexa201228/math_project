@@ -17,7 +17,7 @@ class SchoolPage(models.Model):
         return self.title + " " + self.theme
 
     def get_absolute_url(self):
-        return reverse('category', args=[self.theme, self.slug])
+        return reverse('School:category', args=[self.slug])
     
     def save(self):
         super(SchoolPage, self).save()

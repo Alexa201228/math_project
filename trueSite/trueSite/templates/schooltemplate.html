@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <title>Школьникам</title>
   
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
@@ -53,26 +53,22 @@
     
       <div class="row" style="width: 99vw;">
         <div class="col-3" style="padding-left: 100px; max-width: fit-content;">
-{% for t in tasks %}
-          {% ifchanged %}
-          <i><h1 class="my-4">{{ t.theme }}</h1></i>
-          {% block content %}
-            {% endblock %}
-          <div class="list-group">
-            {% for theme in themes %}
-            {% if t.theme != theme.theme %}
-            <a class="list-group-item" style="color: black;" href="{% url 'schoolMath' %}{{ theme.slug }}">
-           {{theme.theme}}
-            </a>
-            {% endif %}
-           {% endfor %}
-           {% endifchanged %}
-            {% endfor %}
+          <i><h1 class="my-4">{% if category %}{{ category.theme }}{% else %}Все темы{% endif %}</h1></i>
+          <a class="list-group-item" style="color: black;" href="{% url 'school' %}">Все темы</a>
+          <div class="list-group" >
+            
+               {% for t in themes %}
+               <a class="list-group-item" style="color: black;" href="{% url 'school' %}{{ t.slug }}">
+              {{ t.theme }}
+              </a>
+              {% endfor %}
+            
+            
+          </div>
           </div>
   
-        </div>
         
-        <div class="col-8" style="margin-left: auto; margin-right: auto;">
+        <div class="col-6" style="margin-left: auto; margin-right: auto;">
           <br/>
           <div class="container" style="margin-right: auto; margin-right: auto;">
             {% for t in tasks %}

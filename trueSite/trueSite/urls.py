@@ -45,7 +45,7 @@ urlpatterns = [
     path('', homepage.views.Home, name='Home'),
     path('math/', include('mathpage.urls'), name='math'),
     path('homework/', include('homework.urls')),
-    path('School/', include('School.urls')),
+    path('School/', include('School.urls'), name='school'),
     path('metodics/', include('metodics.urls')),
     path('students/', include('students_works.urls')),
     path('blog/', include('blog.urls')),
