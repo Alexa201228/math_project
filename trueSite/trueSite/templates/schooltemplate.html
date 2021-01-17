@@ -54,11 +54,11 @@
       <div class="row" style="width: 99vw;">
         <div class="col-3" style="padding-left: 100px; max-width: fit-content;">
           <i><h1 class="my-4">{% if category %}{{ category.theme }}{% else %}Все темы{% endif %}</h1></i>
-          <a class="list-group-item" style="color: black;" href="{% url 'school' %}">Все темы</a>
+          <a class="list-group-item" style="color: black;" href="{% url 'schoolMath' %}">Все темы</a>
           <div class="list-group" >
             
                {% for t in themes %}
-               <a class="list-group-item" style="color: black;" href="{% url 'school' %}{{ t.slug }}">
+               <a class="list-group-item" style="color: black;" href="{% url 'schoolMath' %}{{ t.slug }}">
               {{ t.theme }}
               </a>
               {% endfor %}
