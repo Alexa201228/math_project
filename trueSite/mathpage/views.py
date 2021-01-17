@@ -3,15 +3,15 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import MathPage
 
-def math(request, theme_slug=None):
+def math(request, theme=None):
     category = None
     mathtasks = MathPage.objects.all()
     mathThemes = MathPage.objects.all().distinct('theme')
     paginator = Paginator(mathtasks, 10)
     page = request.GET.get('page')
-    if theme_slug:
-        category = MathPage.objects.filter(slug=theme_slug)[0]
-        mathtasks = mathtasks.filter(slug=theme_slug)
+    if theme:
+        category = MathPage.objects.filter(slug=theme)[0]
+        mathtasks = mathtasks.filter(slug=theme)
         paginator = Paginator(mathtasks, 10)
         page = request.GET.get('page')
     try:
