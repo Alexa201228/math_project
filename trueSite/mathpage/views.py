@@ -23,16 +23,5 @@ def math(request, theme=None):
     
     return render(request, 'math/categories.html', {'page': page, 'mathtasks': exercise, 'math_themes': mathThemes, 'category': category })
 
-# def categoryTheme(request, theme):
-#     math_theme = MathPage.objects.filter(slug=theme)
-#     all_themes = MathPage.objects.all().distinct('theme')
-#     paginator = Paginator(math_theme, 10)
-#     page = request.GET.get('page')
-#     try:
-#         math_thema = paginator.page(page)
-#     except PageNotAnInteger:
-#         math_thema = paginator.page(1)
-#     except EmptyPage:
-#         math_thema = paginator.page(paginator.num_pages)
-#     return render(request, 'math/categories.html', {'page': page, 'math_tasks': math_thema, 'themes': all_themes})
+
     

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <title>{% if category %}{{ category.theme }}{% else %}Задачи с решениями{% endif %}</title>
   
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
@@ -54,7 +54,7 @@
     
       <div class="row" style="width: 99vw;">
         <div class="col-3" style="padding-left: 100px; max-width: fit-content;">
-          <i><h1 class="my-4">{% if category %}{{ category.theme}}{% else %}Темы{% endif %}</h1></i>
+          <i><h1 class="my-4">{% if category %}{{ category.theme }}{% else %}Темы{% endif %}</h1></i>
           <a class="list-group-item" style="color: black;" href="{% url 'math' %}">Все темы</a>
           {% for t in math_themes %}               
           <a class="list-group-item" style="color: black;" href="{% url 'math' %}{{ t.slug }}">
