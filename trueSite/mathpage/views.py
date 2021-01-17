@@ -13,6 +13,7 @@ def math(request, theme_slug=None):
         category = MathPage.objects.filter(slug=theme_slug)[0]
         mathtasks = MathPage.objects.filter(slug=theme_slug)
         paginator = Paginator(category, 10)
+        page = request.GET.get('page')
     try:
         exercise = paginator.page(page)
     except PageNotAnInteger:
