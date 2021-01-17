@@ -57,7 +57,7 @@
           <i><h1 class="my-4">{% if category %}{{ category.theme}}{% else %}Темы{% endif %}</h1></i>
           <a class="list-group-item" style="color: black;" href="{% url 'math' %}">Все темы</a>
           {% for t in math_themes %}               
-          <a class="list-group-item" style="color: black;" href="{{ t.slug }}">
+          <a class="list-group-item" style="color: black;" href="{% url 'math' %}{{ t.slug }}">
          {{ t.theme }}
          </a>
        {% endfor %}
