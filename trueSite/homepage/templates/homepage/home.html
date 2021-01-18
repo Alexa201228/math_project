@@ -70,30 +70,6 @@ li.dropdown {
 .dropdown-content a:hover {background-color: #f1f1f1;}
 
   </style>
-    {% block domready %}  
-    var page = 1;  
-    var empty_page = false;  
-    var block_request = false;  
-    $(window).scroll(function() 
-    {    
-        var margin = $(document).height() - $(window).height() - 200;    
-        if($(window).scrollTop() > margin && empty_page == false &&  block_request == false) 
-        {     
-            block_request = true;      
-            page += 1;     
-            $.get('?page=' + page, 
-            function(data) {        
-                if(data == '') {          
-                    empty_page = true;        
-                }        
-                else {          
-                    block_request = false;          
-                    $('#content').append(data);        
-                }      
-            });    
-        }  
-    });
-    {% endblock %}
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="padding: 0 5vw;" id="mainNav">
       <div class="container text-white" >
@@ -196,20 +172,6 @@ li.dropdown {
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script>  
-  var csrftoken = Cookies.get('csrftoken');
-  function csrfSafeMethod(method) {
-      return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-  }
-  $.ajaxSetup({beforeSend: function(xhr, settings) {
-      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-          xhr.setRequestHeader("X-CSRFToken", csrftoken);
-          }
-      }
-  });
-  $(document).ready(function(){
-       {% block domready %}    
-       {% endblock %}  
-  });
   // ===== Scroll to Top ==== 
   $(window).scroll(function() {
       if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
