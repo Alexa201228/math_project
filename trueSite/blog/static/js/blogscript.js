@@ -32,7 +32,9 @@ function textWithPictures(text){
             img.src = pathesArr.shift();
             document.getElementById("content-pictures").appendChild(img);
         }
-        var temp = document.getElementsByTagName('p');
+        
+    }
+var temp = document.getElementsByTagName('p');
         for(var i = 2; i < temp.length; i++){
             temp[i].innerHTML = temp[i].innerText
             .replace(/^### (.*$)/gim, '<h3>$1</h3>')
@@ -44,6 +46,4 @@ function textWithPictures(text){
 		    .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
             .replace(/^\l(.*$)/gim, '<br/><hr/>$1');
     } 
-    }
-
 }
