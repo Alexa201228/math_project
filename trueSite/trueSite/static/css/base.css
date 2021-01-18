@@ -1,4 +1,4 @@
-a #return-to-top {
+#return-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -18,7 +18,7 @@ a #return-to-top {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-a #return-to-top i {
+#return-to-top i {
     color: #fff;
     margin: 0;
     position: relative;
@@ -31,10 +31,10 @@ a #return-to-top i {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-a #return-to-top:hover {
+#return-to-top:hover {
     background: rgba(0, 0, 0, 0.9);
 }
-a #return-to-top:hover i {
+#return-to-top:hover i {
     color: #fff;
     top: 5px;
 }
