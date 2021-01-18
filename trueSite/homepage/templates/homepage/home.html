@@ -168,12 +168,63 @@ li.dropdown {
       <div class="container" style="max-width: 100%;">
         <div class="small text-center text-muted">Copyright © Alexandra Gridneva {% now "Y" %}</div>
       </div>
-    </footer>
-  
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
+<script>  
+  var csrftoken = Cookies.get('csrftoken');
+  function csrfSafeMethod(method) {
+      return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  }
+  $.ajaxSetup({beforeSend: function(xhr, settings) {
+      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+          xhr.setRequestHeader("X-CSRFToken", csrftoken);
+          }
+      }
+  });
+  $(document).ready(function(){
+       {% block domready %}    
+       {% endblock %}  
+  });
+  // ===== Scroll to Top ==== 
+  $(window).scroll(function() {
+      if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+          $('#return-to-top').fadeIn(200);    // Fade in the arrow
+      } else {
+          $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+      }   
+  });
+  $('#return-to-top').click(function() {      // When arrow is clicked
+      $('body,html').animate({
+          scrollTop : 0                       // Scroll to top of body
+      }, 500);
+  });
+  </script> 
+    </footer>
+    {% block domready %}  
+    var page = 1;  
+    var empty_page = false;  
+    var block_request = false;  
+    $(window).scroll(function() 
+    {    
+        var margin = $(document).height() - $(window).height() - 200;    
+        if($(window).scrollTop() > margin && empty_page == false &&  block_request == false) 
+        {     
+            block_request = true;      
+            page += 1;     
+            $.get('?page=' + page, 
+            function(data) {        
+                if(data == '') {          
+                    empty_page = true;        
+                }        
+                else {          
+                    block_request = false;          
+                    $('#content').append(data);        
+                }      
+            });    
+        }  
+    });
+    {% endblock %}
   
   
   </body></html>

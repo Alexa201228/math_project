@@ -8,15 +8,9 @@ function textWithPictures(text){
     while(textBody.length > 1){
         imageIndex = textBody.indexOf('?img?');
         if(imageIndex == -1){
-            var splitedText = textBody.split('<br>');
-            for(var i = 1; i < splitedText.length; i++){
-                var tempParagraph = document.createElement('p');
-                tempParagraph.innerHTML = splitedText[i];
-                document.getElementById("content-pictures").appendChild(tempParagraph);
-                var tempSep = document.createElement('hr');
-                tempSep.className = 'separator';
-                document.getElementById("content-pictures").appendChild(tempSep);
-            }
+            var tempPar = document.createElement('p');
+            tempPar.innerHTML = textBody;
+            document.getElementById("content-pictures").appendChild(tempPar) ;
             break;
         }
         else{
@@ -34,12 +28,22 @@ function textWithPictures(text){
         document.getElementById("content-pictures").appendChild(newPar);
         if(pathesArr.length != 0)
         {
-            var imgPar = document.createElement("p");
             var img = document.createElement("img");
             img.src = pathesArr.shift();
-            imgPar.appendChild(img);
-            document.getElementById("content-pictures").appendChild(imgPar);
+            document.getElementById("content-pictures").appendChild(img);
         }
+        var temp = document.getElementsByTagName('p');
+        for(var i = 2; i < temp.length; i++){
+            temp[i].innerHTML = temp[i].innerText
+            .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+		    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+		    .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+		    .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
+		    .replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
+		    .replace(/\*(.*)\*/gim, '<i>$1</i>')
+		    .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
+            .replace(/\l(.*$)/gim, '<br/><hr/>$1');
+    } 
     }
 
 }
