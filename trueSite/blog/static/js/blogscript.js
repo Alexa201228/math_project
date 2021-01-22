@@ -44,6 +44,6 @@ var temp = document.getElementsByTagName('p');
 		    .replace(/\*\*(.*)\*\*/gi, '<b>$1</b>')
 		    .replace(/\*(.*)\*/gi, '<i>$1</i>')
 		    .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
-            .replace(/\<li>(.*$)/gm, '<br/><hr/>$1');
+            .replace(/\\l(.*$)/gm, '<br/><hr/>$1');
     } 
 }
