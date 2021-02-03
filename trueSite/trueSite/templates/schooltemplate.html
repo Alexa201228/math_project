@@ -66,22 +66,8 @@
     <br/>
     <br/>
     <a id="back2Top">&#10148;</a>
-      <script>
-$(window).scroll(function() {
-    var height = $(window).scrollTop();
-    if (height > 100) {
-        $('#back2Top').css("display", "block");
-    } else {
-        $('#back2Top').css('display', 'none');
-    }
-});
-$(document).ready(function() {
-    $("#back2Top").click(function() {
-        $("body,html").animate({ scrollTop: 0 }, 500);
-    });
 
-});
-  </script> 
+
   <div class="row" style="width: 99vw;">
         <div class="col-3" style="padding-left: 100px; max-width: fit-content;">
           <i><h1 class="my-4">{% if category %}{{ category.theme }}{% else %}Все темы{% endif %}</h1></i>
@@ -161,8 +147,22 @@ $(document).ready(function() {
     <footer class="bg-light py-5 footer" style="display: block; box-sizing: border-box; flex-shrink: 0;">
         <div class="small text-center text-muted">Copyright © Alexandra Gridneva {% now "Y" %}</div>
     </footer>
-      
+      <script>
+$(window).scroll(function() {
+    var height = $(window).scrollTop();
+    if (height > 100) {
+        $('#back2Top').addClass('show');
+    } else {
+        $('#back2Top').removeClass('show');
+    }
+});
+$(document).ready(function() {
+    $("#back2Top").click(function() {
+        $("body,html").animate({ scrollTop: 0 }, 500);
+    });
 
+});      
+  </script> 
   
   </body>
   </html>
