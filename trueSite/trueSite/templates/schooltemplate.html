@@ -65,7 +65,7 @@
     <br/>
     <br/>
     <br/>
-    <a id="return-to-top"><i class="icon-chevron-up"></i></a>
+    <a id="return-to-top"></a>
       <div class="row" style="width: 99vw;">
         <div class="col-3" style="padding-left: 100px; max-width: fit-content;">
           <i><h1 class="my-4">{% if category %}{{ category.theme }}{% else %}Все темы{% endif %}</h1></i>
@@ -167,10 +167,11 @@ $(window).scroll(function() {
   }
 });
 
-btn.on('click', function(e) {
-  e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '300');
-});
+$('#return-to-top').click(function() {      // When arrow is clicked
+      $('body,html').animate({
+          scrollTop : 0                       // Scroll to top of body
+      }, 300);
+  });
   </script> 
   
   </body>
