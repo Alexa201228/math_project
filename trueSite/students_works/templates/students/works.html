@@ -53,8 +53,6 @@
         
       </div>
     </nav>
-
-    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
     <!-- Portfolio Section -->
     <section class="page-section bg-white" id="portfolio">
         <br/>
@@ -99,21 +97,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-<script>  
-  // ===== Scroll to Top ==== 
-  $(window).scroll(function() {
-      if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
-          $('#return-to-top').fadeIn(200);    // Fade in the arrow
-      } else {
-          $('#return-to-top').fadeOut(200);   // Else fade out the arrow
-      }   
-  });
-  $('#return-to-top').click(function() {      // When arrow is clicked
-      $('body,html').animate({
-          scrollTop : 0                       // Scroll to top of body
-      }, 500);
-  });
-  </script> 
 
   </body>
   </html>
