@@ -31,7 +31,8 @@
   
     <!-- Theme CSS - Includes Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-creative/5.1.8/css/creative.min.css" rel="stylesheet">
-<!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" >
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177055652-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -64,7 +65,7 @@
     <br/>
     <br/>
     <br/>
-    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+    <a id="return-to-top"><i class="icon-chevron-up"></i></a>
       <div class="row" style="width: 99vw;">
         <div class="col-3" style="padding-left: 100px; max-width: fit-content;">
           <i><h1 class="my-4">{% if category %}{{ category.theme }}{% else %}Все темы{% endif %}</h1></i>
@@ -156,19 +157,20 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 <script>  
-  // ===== Scroll to Top ==== 
-  $(window).scroll(function() {
-      if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
-          $('#return-to-top').fadeIn(200);    // Fade in the arrow
-      } else {
-          $('#return-to-top').fadeOut(200);   // Else fade out the arrow
-      }   
-  });
-  $('#return-to-top').click(function() {      // When arrow is clicked
-      $('body,html').animate({
-          scrollTop : 0                       // Scroll to top of body
-      }, 500);
-  });
+var btn = $('#return-to-top');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
   </script> 
   
   </body>
