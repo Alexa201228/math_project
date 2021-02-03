@@ -82,13 +82,14 @@
             {% for t in mathtasks %}
           <br/>
                   <h3>{{ t.title }}</h3> 
-                  <p></p>
+                  
                 {% if t.image %}
+                <p></p>
                 <a href="{{ t.image.url }}" target="_blank">
                    <img src="{{ t.image.url }}" style="max-width: 100%; max-height: auto; margin-left: auto; margin-right: auto;">
                 </a> 
                 {% endif %}
-             {% if t.description != null %}
+             {% if t.description %}
              <br/>
              <p><b>{{ t.description }}</b></p>
              <br/>
@@ -97,10 +98,11 @@
             <a href="{{ t.image_solution.url }}" target="_blank">
               <img class='card-img-tsop' src="{{ t.image_solution.url }}" style="max-width: 100%; max-height: auto;">
            </a>
-           {% endif %}
            <br/>
            <hr/>
-           {% if t.video_source != null %}
+           {% endif %}
+           
+           {% if t.video_source %}
            {% load embed_video_tags %}
             <p style="padding-top: 2vh; padding-bottom: 5vh; display: flex; align-items: center;">
               <div style="text-align: center;">
