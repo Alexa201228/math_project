@@ -65,7 +65,7 @@
     <br/>
     <br/>
     <br/>
-    <a id="return-to-top">🔝</a>
+    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
       <div class="row" style="width: 99vw;">
         <div class="col-3" style="padding-left: 100px; max-width: fit-content;">
           <i><h1 class="my-4">{% if category %}{{ category.theme }}{% else %}Все темы{% endif %}</h1></i>
@@ -141,12 +141,6 @@
       </div>
       </div>
     
-    <!-- Portfolio Section -->
-    
-     
-      
-
-  
     <!-- Footer -->
     <footer class="bg-light py-5 footer" style="display: block; box-sizing: border-box; flex-shrink: 0;">
         <div class="small text-center text-muted">Copyright © Alexandra Gridneva {% now "Y" %}</div>
@@ -157,23 +151,21 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 <script>
-$(document).ready(function () {  
-var btn = $('#return-to-top');
-
 $(window).scroll(function() {
-  if ($(window).scrollTop() > 300) {
-    btn.fadeIn(200);
-  } else {
-    btn.fadeOut(200);
-  }
+    var height = $(window).scrollTop();
+    if (height > 100) {
+        $('#back2Top').fadeIn();
+    } else {
+        $('#back2Top').fadeOut();
+    }
 });
+$(document).ready(function() {
+    $("#back2Top").click(function(event) {
+        event.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
 
-$('#return-to-top').click(function() {      // When arrow is clicked
-      $('body,html').animate({
-          scrollTop : 0                       // Scroll to top of body
-      }, 'slow');
-      return false;
-  });
 });
   </script> 
   
