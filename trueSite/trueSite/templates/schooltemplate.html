@@ -161,16 +161,16 @@ var btn = $('#return-to-top');
 
 $(window).scroll(function() {
   if ($(window).scrollTop() > 300) {
-    btn.addClass('show');
+    btn.fadeIn();
   } else {
-    btn.removeClass('show');
+    btn.fadeOut();
   }
 });
 
 $('#return-to-top').click(function() {      // When arrow is clicked
       $('body,html').animate({
           scrollTop : 0                       // Scroll to top of body
-      }, 300);
+      }, 'slow');
   });
   </script> 
   
