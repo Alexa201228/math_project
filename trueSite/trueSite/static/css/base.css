@@ -10,8 +10,14 @@
     right: 30px;
     transition: background-color .3s, 
       opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
     z-index: 1000;
 }
+#return-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
   
 #return-to-top::after {
     content: "\f077";

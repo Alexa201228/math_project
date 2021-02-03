@@ -65,7 +65,7 @@
     <br/>
     <br/>
     <br/>
-    <a id="return-to-top"></a>
+    <a id="return-to-top">🔝</a>
       <div class="row" style="width: 99vw;">
         <div class="col-3" style="padding-left: 100px; max-width: fit-content;">
           <i><h1 class="my-4">{% if category %}{{ category.theme }}{% else %}Все темы{% endif %}</h1></i>
@@ -161,9 +161,9 @@ var btn = $('#return-to-top');
 
 $(window).scroll(function() {
   if ($(window).scrollTop() > 300) {
-    btn.fadeIn();
+    btn.addClass('show');
   } else {
-    btn.fadeOut();
+    btn.removeClass('show');
   }
 });
 
