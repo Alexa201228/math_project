@@ -21,6 +21,7 @@ class MathPage(models.Model):
         return reverse('mathpage:categoryTheme', args=[self.slug])
     
     def save(self):
+        self.theme = ' '.join(str(self.theme).split())
         super(MathPage, self).save()
         try:
             ping_google()
