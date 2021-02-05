@@ -18,8 +18,9 @@ class SchoolPage(models.Model):
 
     def get_absolute_url(self):
         return reverse('School:category', args=[self.slug])
-    
+
     def save(self):
+        self.theme = ' '.join(str(self.theme).split())
         super(SchoolPage, self).save()
         try:
             ping_google()
