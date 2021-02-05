@@ -6,6 +6,8 @@ def schoolMath(request, theme=None):
     category = None
     tasks = SchoolPage.objects.all().order_by('title')
     themes = SchoolPage.objects.all().distinct('theme')
+    for i in themes:
+        i = ' '.join(i.split())
     paginator = Paginator(tasks, 10)
     page = request.GET.get('page')
     if theme:
