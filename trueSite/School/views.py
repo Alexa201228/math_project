@@ -5,7 +5,7 @@ from .models import SchoolPage
 def schoolMath(request, theme=None):
     category = None
     tasks = SchoolPage.objects.all().order_by('title')
-    themes = SchoolPage.objects.all().distinct('theme')
+    themes = set(SchoolPage.objects.all().distinct('theme'))
     paginator = Paginator(tasks, 10)
     page = request.GET.get('page')
     if theme:
