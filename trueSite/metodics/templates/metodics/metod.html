@@ -75,17 +75,17 @@
         <button style="align-items: center;"><a href = '{{ m.text_file.url }}'>
           Скачать
         </a></button>
-        <hr/>
         <br/>
         {% if m.video_source %}
            {% load embed_video_tags %}
             <p style="padding-top: 2vh; padding-bottom: 5vh; display: flex; align-items: center; max-width: 99vw;">
               <div style="text-align: center; max-width: 99vw;">
-                {% video m.video_source "small" %}
+                {% video m.video_source "100% x 50%" %}
               </div>
             </p>
            <br/>
            {% endif %}
+          <hr/>
         {% endfor %}
         <div style="display: flex; align-items: center; justify-content: center; padding: 5px;">
         {% include 'paginator.html' with page=metods %}
