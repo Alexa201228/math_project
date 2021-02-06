@@ -71,7 +71,12 @@
                 {% show_latest_posts 4 %}
             </div>  
         </div>
-        
+        <footer class="bg-light py-5">
+            <div class="container" style="max-width: 100%;">
+              <div class="small text-center text-muted">Copyright © Alexandra Gridneva 2020-{% now "Y" %}</div>
+            </div>
+          
+          </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
         <script src="{% static 'js/navbar.js' %}"></script>
