@@ -9,4 +9,4 @@ class PostSitemap(Sitemap):
         return Post.objects.all()
 
     def location(self, item):
-        return '/blog/' + item.slug
+        return '/blog/' + item.publish + '/' + item.slug
