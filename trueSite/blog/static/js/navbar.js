@@ -33,6 +33,7 @@ function controlSize(){
 function bigScreen(){
 
     $("#sidebar").show();
+    $("button").hide();
     $("button").text("🞬");
     $("#return-to-top").css('max-width', '50px');
     $("#return-to-top").css('max-heigth', '50px');
