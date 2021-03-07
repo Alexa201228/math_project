@@ -44,6 +44,7 @@ function bigScreen(){
 
 function smallScreen(){
         $("button").text("☰");
+        $("button").show();
         $("#sidebar").hide();
         $("#return-to-top").css('max-width', '20px');
         $("#return-to-top").css('max-heigth', '20px');
